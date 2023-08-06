@@ -1,0 +1,34 @@
+@charset "utf-8"; 
+
+/* Comentario CSS */
+
+body { background-color: rgb(90, 142, 174)}
+
+#tituloWeb{ 
+    background-color:rgb(69, 198, 69);
+    text-align: center;
+}
+
+nav{ 
+    background-color:rgb(114, 57, 170);
+    text-align: center;
+}
+
+aside{ 
+    background-color:rgb(255, 105, 105);
+    float: left;
+    height: 1222px;
+}
+
+ section{ 
+    background-color:rgb(105, 89, 249);
+    margin-left: 220px;
+    padding-left: 20px;
+}
+
+ #pieWeb{ 
+    background-color:rgb(186, 214, 84)}
+
+
+ li {display: inline;}
+
