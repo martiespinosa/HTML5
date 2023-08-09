@@ -1,0 +1,50 @@
+<!-- Escribiendo "!" y dando al enter, en un documento html, nos crea la estructura básica de un documento html automáticamnete -->
+
+<!-- ----- Vemos la funcion de addEventListener ----- -->
+
+<!-- opción 3: sacado de un comentario del video de yt. creditos: @amilcarjosesanchez , https://www.youtube.com/watch?v=FJdoK4xMg4I&list=PLU8oAlHdN5BnX63lyAeV0LzLnpGudgRrK&index=16&ab_channel=pildorasinformaticas -->
+
+
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Eventos con JS</title>
+
+        <script>
+            var imagenes = document.getElementsByTagName("img");
+
+            function manejaFlor() {
+                for (var i = 0; i < imagenes.length; i++) {
+                    imagenes[i].addEventListener("click",rutaImg,false);
+                    imagenes[i].addEventListener("mouseover",crece,false);
+                    imagenes[i].addEventListener("mouseout",mengua,false);
+                }
+            }
+            
+
+            function rutaImg(){   //muestra la ruta de la imagen
+                alert(this.src);
+            }
+
+            function crece(){
+                this.width = 225;
+                this.height = 225;
+            }
+
+            function  mengua(){
+                this.width = 200;
+                this.height = 200;
+            }
+
+            window.onload = manejaFlor;
+        </script>
+    </head>
+
+    <body>
+        <!-- "&nbsp;" es una expresión html que agrega un poco de espacio -->
+        <p><img src="imagenes/1.jpg"/>&nbsp;&nbsp;<img src="imagenes/2.jpg"/>&nbsp;&nbsp;<img src="imagenes/3.jpg"/>&nbsp;&nbsp;<img src="imagenes/4.jpg"/>&nbsp;&nbsp;<img src="imagenes/5.jpg"/></p>
+    </body>
+</html>
