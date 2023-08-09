@@ -6,19 +6,37 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Eventos con JS</title>
+
+        <script>
+            var imagen;
+
+            function manejaFlor() {
+                imagen = document.getElementsByTagName("img")[0];
+                imagen.addEventListener("mouseover", crecer, false);
+                imagen.addEventListener("mouseout", menguar, false);
+                imagen.addEventListener("click", tipoFlor, false);
+            }
+
+            function crecer() {
+                imagen.width = 225;
+                imagen.height = 225;
+            }
+
+            function menguar() {
+                imagen.width = 200;
+                imagen.height = 200;
+            }
+
+            function tipoFlor() {
+                alert("Esta flor es rosa")
+            }
+
+            window.onload = manejaFlor;
+        </script>
     </head>
 
     <body>
-        <h1>Aquí iría el título de la página</h1>
-
-        <p>Este es el priemr párrafo</p>
-   
-
-        <p>Párrafo añadido desde rama 1</p>
-  
-        <p>Párrafo añadido desde rama2</p>
-      
-        <p>Párrafo añadido desde rama3</p>
+        <p><img src="1.jpg"/></p>
     </body>
 </html>
