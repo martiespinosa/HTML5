@@ -2,7 +2,7 @@
 
 /* Comentario CSS */
 
-body { background-color: rgb(90, 142, 174)}
+body { background-color: rgb(90, 142, 174);}
 
 #tituloWeb{ 
     background-color:rgb(69, 198, 69);
@@ -26,9 +26,10 @@ aside{
     padding-left: 20px;
 }
 
- #pieWeb{ 
-    background-color:rgb(186, 214, 84)}
+#pieWeb{ 
+    background-color:rgb(186, 214, 84)
+}
 
 
- li {display: inline;}
+li {display: inline;}
 
