@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <style>
+            p {background-color: rgb(113, 113, 255);}
+        </style>
+
+        <script>
+            function loseventos() {
+                var elemento1 = document.getElementsByTagName("img")[0];
+                var elemento2 = document.getElementsByTagName("p")[0];
+
+                elemento1.addEventListener("click", aviso1, true);
+                elemento2.addEventListener("click", aviso2, false);
+                // El "false" y el "true" del addEventListener determinan que evento se ejecuta primero en caso de eventos anidados
+            }
+
+            function aviso1() {
+                alert("Hola, soy la imagen");
+            }
+
+            function aviso2() {
+                alert("Hola, soy el párrafo");
+            }
+
+            window.addEventListener("load", loseventos, false);           
+        </script>
+    </head>
+
+    <body>
+        <p><img src="imagenes/1.jpg"/></p> <!-- la imagen está dentro del párrafo, so al haer click en l aimágen también estoy haciendo click en el parrafo: vemos un ejemplo de eventos anidados con los alerts y el false o true para determinar cual se ejecuta primero -->
+    </body>
+</html>
