@@ -1,0 +1,55 @@
+<!-- Escribiendo "!" y dando al enter, en un documento html, nos crea la estructura básica de un documento html automáticamnete -->
+
+<!-- ----- Vemos la funcion de addEventListener ----- -->
+
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Eventos con JS</title>
+
+        <script>
+            var imagen = new Array(4);
+
+            function manejaFlor() {
+                for (var i = 0; i < 5; i++) {
+                    imagen[i] = document.getElementsByTagName("img")[i];
+                }
+
+                // ejemplo de funciones anónimas:
+                imagen[0].addEventListener("mouseover", function() {imagen[0].width=225; imagen[0].height=225;}, false);
+                imagen[0].addEventListener("mouseout", function() {imagen[0].width=200; imagen[0].height=200;}, false);
+                imagen[0].addEventListener("click", tipoFlor, false);
+
+                imagen[1].addEventListener("mouseover", function() {imagen[1].width=225; imagen[1].height=225;}, false);
+                imagen[1].addEventListener("mouseout", function() {imagen[1].width=200; imagen[1].height=200;}, false);
+                imagen[1].addEventListener("click", tipoFlor, false);
+
+                imagen[2].addEventListener("mouseover", function() {imagen[2].width=225; imagen[2].height=225;}, false);
+                imagen[2].addEventListener("mouseout", function() {imagen[2].width=200; imagen[2].height=200;}, false);
+                imagen[2].addEventListener("click", tipoFlor, false);
+
+                imagen[3].addEventListener("mouseover", function() {imagen[3].width=225; imagen[3].height=225;}, false);
+                imagen[3].addEventListener("mouseout", function() {imagen[3].width=200; imagen[3].height=200;}, false);
+                imagen[3].addEventListener("click", tipoFlor, false);
+
+                imagen[4].addEventListener("mouseover", function() {imagen[4].width=225; imagen[4].height=225;}, false);
+                imagen[4].addEventListener("mouseout", function() {imagen[4].width=200; imagen[4].height=200;}, false);
+                imagen[4].addEventListener("click", tipoFlor, false);
+            }
+
+            function tipoFlor() {
+                alert("Es una flor")
+            }
+
+            window.addEventListener("load", manejaFlor, false);
+        </script>
+    </head>
+
+    <body>
+        <!-- "&nbsp;" es una expresión html que agrega un poco de espacio -->
+        <p><img src="imagenes/1.jpg"/>&nbsp;&nbsp;<img src="imagenes/2.jpg"/>&nbsp;&nbsp;<img src="imagenes/3.jpg"/>&nbsp;&nbsp;<img src="imagenes/4.jpg"/>&nbsp;&nbsp;<img src="imagenes/5.jpg"/></p>
+    </body>
+</html>
