@@ -5,9 +5,24 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Prueba de video</title>
+
+        <style>
+            body {
+                background-color: black;
+            }
+
+
+        </style>
     </head>
 
     <body>
-        <video src="videos/ocean.mp4" controls autoplay muted loop width="1080"></video>
+        <center> <!-- para centrar el contenido de todo el body -->
+            <section>
+                <video controls autoplay muted loop width="1080"> <!-- añado dos extensiones del mismo video para evitar posibles incopatibilidades en navegadores -->
+                    <source src="videos/tierra.mp4"> 
+                    <source src="videos/tierra.webm">
+                </video>
+            </section>
+        </center>
     </body>
 </html>
