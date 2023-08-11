@@ -14,30 +14,30 @@ body {
 
 
 header {
-    background: linear-gradient(to right, rgb(101, 101, 101), rgb(74, 74, 74));   
+    background: linear-gradient(to right, rgb(50, 50, 50), rgb(0, 0, 0));   
     width: 550px;
     text-align: center;
-    margin: 10px auto;
+    margin: 0px auto;
     font-size: 33px;
-    border-radius: 20px;
+    border-radius: 15px;
 }
 
 nav{ 
-    background: linear-gradient(to right, rgb(101, 101, 101), rgb(74, 74, 74));
+    background: linear-gradient(to right, rgb(50, 50, 50), rgb(0, 0, 0));
     text-align: center;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 aside{ 
-    background: linear-gradient(to bottom, rgb(101, 101, 101), rgb(74, 74, 74));
+    background: linear-gradient(to bottom, rgb(50, 50, 50), rgb(0, 0, 0));
     float: left;
     border-radius: 10px;
     height: 570px;
 }
 
 section{ 
-    background: linear-gradient(to bottom, rgb(101, 101, 101), rgb(74, 74, 74));
-    margin-left: 220px;
+    background: linear-gradient(to bottom, rgb(50, 50, 50), rgb(0, 0, 0));
+    margin-left: 210px;
     margin-bottom: 10px;
     padding: 1px 15px;
     border-radius: 10px;
@@ -45,12 +45,27 @@ section{
 }
 
 footer{
-    background: linear-gradient(to right, rgb(101, 101, 101), rgb(74, 74, 74));
+    background: linear-gradient(to right, rgb(50, 50, 50), rgb(0, 0, 0));
     border-radius:10px;
     padding: 10px;
+    margin-top: 15px;
 }
 
 li {
     display: inline;
-    padding: 50px;
+    margin: 50px;
+}
+
+li:hover {
+    cursor: pointer;
+}
+
+blockquote {
+    padding-bottom: 20px;
+    padding-top: 10px;
+    text-align: left;
+}
+
+blockquote:hover {
+    cursor: pointer;
 }
