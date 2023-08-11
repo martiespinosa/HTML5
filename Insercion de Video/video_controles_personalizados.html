@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Prueba de video</title>
+
+        <style>
+            body {
+                background-color: black;
+            }
+
+            section {
+                width: 720px;
+                margin: 50px auto;
+                background-color: rgb(47, 146, 126);
+                padding: 5px;
+                border: 10px solid rgb(47, 55, 146);
+                border-radius: 20px;
+            }
+
+            video {
+                border-radius: 10px;
+            }
+
+            nav {
+                margin: 5px 0;
+            }
+
+            #play {
+                float: left;
+                border-radius: 10px;
+                width: 90px;
+                height: 20px;
+                margin-left: 5px; 
+            }
+
+            #barra {
+                background-color: rgb(255, 255, 255);
+                width: 600px;
+                height: 8px;
+                border: 1px solid rgb(128, 128, 128);
+                padding: 5px;
+                margin-left: 100px;
+                margin-top: 10px;
+                border-radius: 10px;
+            }
+
+            #progreso {
+                position: absolute;
+                width: 0px;
+                height: 5px;
+                background-color: rgb(77, 90, 234);
+                border-radius: 5px;
+                padding-top: 3.8px;
+            }
+
+            h2 {
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 36px;
+                font-style: "bold";
+                color: white;
+
+            }
+        </style>
+
+        <script>
+            var video, play, barra, progreso, maximo;
+
+            maximo = 600;
+            
+            function comenzar() {
+                video = document.getElementById("video");
+                play = document.getElementById("play");
+                barra = document.getElementById("barra");
+                progreso = document.getElementById("progreso");
+
+                play.addEventListener("click", f_click);
+                video.addEventListener("click", f_click);
+                video.addEventListener("dblclick", f_fullscreen);
+                video.addEventListener("ended", f_ended);
+                progreso.addEventListener("click", f_progreso);
+                barra.addEventListener("click", f_mover);
+            }
+           
+            function f_click() {
+                if (video.paused === true || video.ended === true) {
+                    video.play();
+                    play.textContent = "Pause";
+
+                    bucle = setInterval(f_progreso, 30)
+
+                } else {
+                    video.pause();
+                    play.textContent = "Play";
+                }
+            }
+
+            function f_ended() {
+                play.textContent = "Play";
+            }
+
+            function f_progreso() {
+                if (video.ended === false) {
+                    
+                }
+            }
+
+            function f_fullscreen() {
+                if (video.requestFullscreen) {
+                    if (document.fullscreenElement) {
+                        document.exitFullscreen();
+                    } else {
+                        video.requestFullscreen();
+                    }
+                }
+            }
+
+            function f_progreso() {
+                if (video.ended === false) {
+                    var total = parseInt(video.currentTime*maximo/video.duration)
+                    progreso.style.width = total + "px";
+                }
+            }
+
+            function f_mover(posicion) {
+                var ratonX = posicion.pageX - barra.offsetLeft;
+                var nuevo_tiempo = ratonX * video.duration / maximo;
+
+                video.currentTime = nuevo_tiempo;
+                progreso.style.width = ratonX + "px";
+            }
+
+            window.addEventListener("load", comenzar);
+        </script>
+    </head>
+
+    <body>
+        <center> <!-- para centrar el contenido de todo el body -->
+            <section>
+                <h2>REPRODUCTOR DE VIDEO DESDE 0</h2>
+                <video id="video" width="720"> <!-- añado dos extensiones del mismo video para evitar posibles incopatibilidades en navegadores -->
+                    <source src="videos/ocean.mp4"> 
+                    <source src="videos/ocean.webm">
+                </video>
+                <nav>
+                    <div>
+                        <button type = "button" id="play" >Play</button>
+                    </div>
+                    <div id="barra">
+                        <div id="progreso"></div>
+                    </div>
+                </nav>
+            </section>
+        </center>
+    </body>
+</html>
