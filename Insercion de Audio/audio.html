@@ -5,13 +5,34 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
+
+        <style>
+            body {
+                background-color: black;
+            }
+
+            audio {
+                padding: 250px 50px;
+            }
+        </style>
     </head>
 
     <body>
-        <section>
-            <audio src="audios/house.mp3" controls></audio>
-            <audio src="audios/rampb.mp3" controls></audio>
-            <audio src="audios/seduction.mp3" controls></audio>
-        </section>
+        <center>
+            <section>
+                <audio id="audio1" controls>
+                    <source src="audios/house.mp3"/>
+                    <source src="audios/house.ogg"/>
+                </audio>
+                <audio id="audio2" controls>
+                    <source src="audios/rampb.mp3"/>
+                    <source src="audios/rampb.ogg"/>
+                </audio>
+                <audio id="audio3" controls>
+                    <source src="audios/seduction.mp3"/>
+                    <source src="audios/seduction.ogg"/>
+                </audio>
+            </section>
+        </center>
     </body>
 </html>
