@@ -76,12 +76,12 @@
                 barra = document.getElementById("barra");
                 progreso = document.getElementById("progreso");
 
-                play.addEventListener("click", f_click);
                 video.addEventListener("click", f_click);
                 video.addEventListener("dblclick", f_fullscreen);
                 video.addEventListener("ended", f_ended);
-                progreso.addEventListener("click", f_progreso);
+                play.addEventListener("click", f_click);
                 barra.addEventListener("click", f_mover);
+                progreso.addEventListener("click", f_progreso);                
             }
            
             function f_click() {
@@ -99,12 +99,6 @@
 
             function f_ended() {
                 play.textContent = "Play";
-            }
-
-            function f_progreso() {
-                if (video.ended === false) {
-                    
-                }
             }
 
             function f_fullscreen() {
