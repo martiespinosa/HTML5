@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Prueba de audio</title>
+
+        <style>
+            body {
+                background-color: black;
+            }
+
+            section {
+                width: 720px;
+                margin: 50px auto;
+                background-color: rgb(47, 146, 126);
+                padding: 5px;
+                border: 10px solid rgb(47, 55, 146);
+                border-radius: 20px;
+            }
+
+            /* audio {
+                border-radius: 10px; */
+            /* } */
+
+            nav {
+                margin: 5px 0;
+            }
+
+            #play {
+                float: left;
+                border-radius: 10px;
+                width: 90px;
+                height: 20px;
+                margin-left: 5px; 
+            }
+
+            #barra {
+                background-color: rgb(255, 255, 255);
+                width: 600px;
+                height: 8px;
+                border: 1px solid rgb(128, 128, 128);
+                padding: 5px;
+                margin-left: 100px;
+                margin-top: 10px;
+                border-radius: 10px;
+            }
+
+            #progreso {
+                position: absolute;
+                width: 0px;
+                height: 5px;
+                background-color: rgb(77, 90, 234);
+                border-radius: 5px;
+                padding-top: 3px;
+            }
+
+            h2 {
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 36px;
+                font-style: "bold";
+                color: white;
+
+            }
+        </style>
+
+        <script>
+            var audio, play, barra, progreso, maximo;
+
+            maximo = 600;
+            
+            function comenzar() {
+                play = document.getElementById("play");
+                barra = document.getElementById("barra");
+                progreso = document.getElementById("progreso");
+                audio = document.getElementById("audio");
+                
+                play.addEventListener("click", f_click);
+                barra.addEventListener("click", f_mover);
+                progreso.addEventListener("click", f_progreso);   
+                audio.addEventListener("ended", f_ended);          
+            }
+        
+            function f_click() {
+                if (audio.paused === true || audio.ended === true) {
+                    audio.play();
+                    play.textContent = "Pause";
+
+                    bucle = setInterval(f_progreso, 30)
+
+                } else {
+                    audio.pause();
+                    play.textContent = "Play";
+                }
+            }
+
+            function f_ended() {
+                play.textContent = "Play";
+            }
+
+            function f_fullscreen() {
+                if (audio.requestFullscreen) {
+                    if (document.fullscreenElement) {
+                        document.exitFullscreen();
+                    } else {
+                        audio.requestFullscreen();
+                    }
+                }
+            }
+
+            function f_progreso() {
+                if (audio.ended === false) {
+                    var total = parseInt(audio.currentTime*maximo/audio.duration)
+                    progreso.style.width = total + "px";
+                }
+            }
+
+            function f_mover(posicion) {
+                var ratonX = posicion.pageX - barra.offsetLeft;
+                var nuevo_tiempo = ratonX * audio.duration / maximo;
+
+                audio.currentTime = nuevo_tiempo;
+                progreso.style.width = ratonX + "px";
+            }
+
+            window.addEventListener("load", comenzar);
+        </script>
+    </head>
+
+    <body>
+        <center>
+            <section>
+                <h2>REPRODUCTOR DE AUDIO DESDE 0</h2>
+                <audio id="audio">
+                    <source src="audios/seduc.mp3"/>
+                    <source src="audios/seduc.ogg"/>
+                </audio>
+                <nav>
+                    <div>
+                        <button type = "button" id="play" >Play</button>
+                    </div>
+                    <div id="barra">
+                        <div id="progreso"></div>
+                    </div>
+                </nav>
+            </section>
+        </center>
+    </body>
+</html>
