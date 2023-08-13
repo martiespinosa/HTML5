@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mi formulario</title>
+
+        <link rel="stylesheet" type="text/css" href="primer_formulario.css"/>
+    </head>
+
+    <body>
+        <!-- <center> -->
+            <section>
+                <form name="mi_formulario" id="mi_formulario" method="get" autocomplete="off"> <!-- rquired para hacer un campo obligatorio -->
+                    Email: <input type="email" name="email" id="email" placeholder='debe incluir "@"' multiple autofocus/><br/><br/> <!-- "<br>" crea un salto de línea -->
+                    <!-- Buscar: <input type="search" name="buscar" id="buscar"/><br/><br/> -->
+                    Url: <input type="url" name="url" id="url"/><br/><br/>
+                    Edad: <input type="number" name="edad" id="edad" min="0" max="99" step="1"/><br/><br/>
+                    Felicidad: <input type="range" name="felicidad" id="felicidad" min="0" max="100" step="25"/><br/><br/>
+                    Fecha: <input type="date" name="fecha" id="fecha"/><br/><br/>
+                    Semana: <input type="week" name="semana" id="semana"/><br/><br/>
+                    Mes: <input type="month" name="mes" id="mes"/><br/><br/>
+                    Hora: <input type="time" name="hora" id="hora"/><br/><br/>
+                    C. Postal: <input pattern="[0-9]{5}" name="c_postal" id="c_postal"/><br/><br/>
+                    <datalist id="num">
+                        <option value="618395601" label="Tel 1"/>
+                        <option value="687467820" label="Tel 2"/>
+                        <option value="692720871" label="Tel 3"/>
+                    </datalist>
+                    Número tlf: <input type="tel" name="num" id="num" list="num"><br/><br/>
+                    
+                    <input type="submit" value="Send" id="enviar"/><br/><br/>
+                </form>
+                Sexo: <select name="sexo" id="sexo" form="mi_formulario">
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                </select><br/><br/>
+                Nombre: <input type="text" name="nombre" id="nombre" form="mi_formulario"> <!-- para incluir dentro de un formulario algo que está fuera del formulario -->
+            </section>
+        <!-- </center> -->
+    </body>
+</html>
+

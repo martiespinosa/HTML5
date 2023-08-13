@@ -1,0 +1,17 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+input {
+    border-radius: 5px;
+}
+
+#sexo {
+    border-radius: 5px;
+}
+
+#enviar {
+    background-color: lightblue;
+}
