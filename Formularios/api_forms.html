@@ -5,9 +5,28 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Formulario con API forms</title>
+
+        <link rel="stylesheet" href="api_forms.css">
+        <script type="text/javascript" src="api_forms.js"></script>
     </head>
     
     <body>
-        
+        <center>
+            <section>
+                <h2>Registro con tabla y API forms</h2>
+                <form name="prueba_api_forms" method="get" autocomplete="off">
+                    <table><tr><td> <!-- "<tr>" (nueva fila), "<td>" (nueva celda) -->
+                        Nombre: </td><td> <input pattern="[a-zA-Z]+" name="nombre" id="nombre" autofocus> </td></tr>
+                        <tr><td>
+                        Apellido: </td><td> <input pattern="[a-zA-Z]+" name="apellido" id="apellido"> </td></tr>
+                        <tr><td>
+                        Edad: </td><td> <input type="number" name="edad" id="edad" min="0" max="99" step="1"> </td></tr>
+                        <tr><td>
+                        <br>
+                        <input type="submit" value="Registrarse" id="enviar"></td></tr>  
+                    </table>
+                </form>
+            </section>
+        </center>
     </body>
 </html>

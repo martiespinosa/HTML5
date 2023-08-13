@@ -1,0 +1,30 @@
+body {
+    background-color: black;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+section {
+    background-color: gray;
+    width: 500px;
+    margin-top: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+}
+
+table {
+    background-color: darkgrey;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+input {
+    border-radius: 10px;
+    padding-left: 5px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+td {
+    padding: 5px;
+}
+
