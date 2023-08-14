@@ -10,8 +10,6 @@ function f_iniciar() {
   apellido.addEventListener("input", f_validar);
   edad.addEventListener("input", f_validar);
   enviar.addEventListener("click", f_validar);
-
-  f_validar;
 }
 
 function f_validar() {
