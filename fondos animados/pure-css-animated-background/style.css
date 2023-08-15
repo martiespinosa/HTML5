@@ -103,6 +103,7 @@ section {
     position: relative; /* Establece la posición relativa para los elementos absolutos */
     transform: translateX(-100%);
     animation: enterAnimation 1s forwards;
+    z-index: 2; /* Valor más alto para el section */
 }
 
 
@@ -131,6 +132,7 @@ section {
     background: rgba(255, 255, 255, 0.2);
     animation: animate 25s linear infinite;
     bottom: -150px;
+    z-index: 1; /* Valor más bajo para los cuadrados */
     
 }
 
