@@ -44,6 +44,15 @@ a {
   text-decoration: none;
 }
 
+#logo {
+  float: right;
+  width: 100px;
+  height: 100px;
+  padding-right: 50px;
+  padding-top: 10px;
+  opacity: 0.75;
+}
+
 .pelicula {
   width: 260px;
   height: 380px;
@@ -85,11 +94,11 @@ a {
   /* transition: transform 0.5s ease; */
 }
 
-img {
+#img1, #img2, #img3{
   transition: transform 0.3s ease;
 }
 
-img:hover {
+.img:hover{
   transform: scale(1.2);
 }
 
