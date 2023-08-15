@@ -26,22 +26,45 @@ body {
 }
 
 #minombre {
+  text-align: left;
   padding-top: 30px;
-  padding-right: 610px;
+  padding-left: 60px;
   font-size: 24px;
   color: #5e65e7;
 }
 
 #top {
-  width: 600px;
+  width: 100%;
+  text-align: left;
   padding-top: 15px;
-  padding-right: 285px;
-  font-size: 46px;
+  padding-left: 60px;
+  font-size: 45px;
   color: #3f46cd;
 }
 
 a {
   text-decoration: none;
+}
+
+h2 {
+  position: absolute;
+  font-size: 100px;
+  color: #3f46cd7d;
+  float: left;
+  padding-top: 120px;
+  margin-top: 0px;
+}
+
+#h21 {
+  margin-left: 35px;
+}
+
+#h22 {
+  margin-left: 330px;
+}
+
+#h23 {
+  margin-left: 640px;
 }
 
 #logo {
@@ -104,6 +127,7 @@ a {
 
 cite {
   float: left;
+  text-align: left;
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
