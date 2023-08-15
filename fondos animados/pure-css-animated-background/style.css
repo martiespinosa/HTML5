@@ -1,58 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
-
-*{
-    margin: 0px;
-    padding: 0px;
-}
-
 @font-face {
     font-family: 'mon';
     src: url(Montserrat-VariableFont_wght.ttf);
 }
 
-body{
-    font-family: 'mon';
-    color: white;
-    overflow: hidden;
-}
-
-#minombre {
-    padding-top: 30px;
-    padding-right: 640px;
-    font-size: 24px;
-    color: #686ee6;
-}
-
-#top {
-    width: 600px;
-    padding-top: 15px;
-    padding-right: 315px;
-    font-size: 46px;
-    color: #3f46cd;
-}
-
-#pelicula1,
-#pelicula2,
-#pelicula3 {
-    width: 250px;
-    height: 350px;
-    background-color: rgb(0, 0, 0);
-    border-radius: 25px;
-    margin-top: 25px;
-    position: absolute;
-    background-size: cover;
-    background-position: center;
-    transition: transform 0.5s ease;
-}
-
-#pelicula1:hover,
-#pelicula2:hover,
-#pelicula3:hover {
-    transform: scale(1.2);
-}
-
-
-/* Animación al cargar la página */
 @keyframes enterAnimation {
     0% {
         transform: translateX(-100%);
@@ -64,42 +14,101 @@ body{
     }
 }
 
-#pelicula1 {
-    left: 50px;
-    background-image: url(fotos/cadena_perpetua.jpg);
-    /* animation: enterAnimation 2s forwards; */
+*{
+    margin: 0px;
+    padding: 0px;
 }
 
-#pelicula2 {
-    left: 375px;
-    background-image: url(fotos/el-padrino.jpg);
-    /* animation: enterAnimation 1.75s forwards; */
+body{
+    font-family: 'mon';
+    color: white;
+    overflow: hidden;   
 }
 
-#pelicula3 {
-    left: 700px;
-    background-image: url(fotos/El-Caballero-Oscuro-6.jpeg);
-    /* animation: enterAnimation 1.5s forwards; */
+#minombre {
+    padding-top: 30px;
+    padding-right: 610px;
+    font-size: 24px;
+    color: #5e65e7;
 }
 
-#cite1,
-#cite2,
-#cite3 {
-    float: left;
-    margin-top: 360px;
-    margin-left: 10px;
-    font-style: normal;
-    font-weight: bold;
+#top {
+    width: 600px;
+    padding-top: 15px;
+    padding-right: 285px;
+    font-size: 46px;
     color: #3f46cd;
 }
 
+a {
+    text-decoration: none;
+}
+
+.pelicula {
+    width: 260px;
+    height: 380px;
+    border-radius: 25px;
+    margin-top: 25px;
+    position: absolute;
+    overflow: hidden; /* Para recortar la imagen fuera del contenedor */
+}
+
+.pelicula img {
+    width: 100%; /* Ocupar el 100% del ancho del contenedor */
+    height: 100%; /* Mantener la proporción original de la imagen */
+    position: relative; /* Añadir posición relativa para ajustar verticalmente */
+    top: 0%; /* Mover la imagen hacia arriba en un 50% de su altura */
+    object-fit: cover; /* Escalar y recortar la imagen para que encaje */
+}
+
+
+#pelicula1, #cite1 {
+    left: 60px;
+    /* background-image: url(fotos/cade.jpg); */
+    animation: enterAnimation 2.5s forwards;
+    /* transition: transform 0.5s ease; */
+}
+
+#pelicula2, #cite2{
+    left: 370px;
+    /* background-image: url(fotos/el-pa.jpg); */
+    animation: enterAnimation 2.25s forwards;
+    /* transition: transform 0.5s ease; */
+}
+
+#pelicula3, #cite3{
+    left: 680px;
+    /* background-image: url(fotos/caballero.jpg); */
+    animation: enterAnimation 2s forwards;
+    /* transition: transform 0.5s ease; */
+}
+
+img {
+    transition: transform 0.3s ease;
+}
+
+
+img:hover {
+    transform: scale(1.2);
+}
+
+cite {
+    float: left;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    color: #3f46cd;
+    margin-top: 420px;
+    margin-left: 70px;
+}
+
 section {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.4);
     width: 1000px;
     height: 600px;
     border-radius: 25px;
     margin: auto;
-    box-shadow: rgba(0, 0, 0, 0.5) 10px 10px 10px;
+    box-shadow: rgba(10, 49, 127, 0.717) 15px 15px 25px;
     position: relative; /* Establece la posición relativa para los elementos absolutos */
     transform: translateX(-100%);
     animation: enterAnimation 1s forwards;
@@ -123,17 +132,16 @@ section {
    
 }
 
-.circles li{
+.circles li {
     position: absolute;
     display: block;
     list-style: none;
     width: 20px;
     height: 20px;
     background: rgba(255, 255, 255, 0.2);
-    animation: animate 25s linear infinite;
+    animation: animate 15s linear infinite;
     bottom: -150px;
     z-index: 1; /* Valor más bajo para los cuadrados */
-    
 }
 
 .circles li:nth-child(1){
