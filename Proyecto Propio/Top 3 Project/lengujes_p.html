@@ -17,19 +17,123 @@
       }
 
       #cite1 {
-        padding-left: 0px;
+        margin-top: 200px;
+        margin-left: 100px;
       }
 
       #cite2 {
-        padding-left: 20px;
+        margin-top: 200px;
+        margin-left: 180px;
       }   
 
       #cite3 {
-        padding-left: 10px;
+        margin-top: 200px;
+        margin-left: 190px;
+      }
+
+      #cite4 {
+        margin-top: 205px;
+        margin-left: 100px;
+      }
+
+      #cite5 {
+        margin-top: 205px;
+        margin-left: 180px;
+      }
+
+      #cite6 {
+        margin-top: 205px;
+        margin-left: 170px;
       }
       
       #top {
         font-size: 36px;
+      }
+
+      .pelicula {
+        width: 200px;
+        height: 200px;
+      }
+
+      #pelicula1 {
+        margin-top: 5px;
+        margin-left: 30px;
+      }
+
+      #pelicula2 {
+        margin-top: 5px;
+        margin-left: 45px;
+      }
+
+      #pelicula3 {
+        margin-top: 5px;
+        margin-left: 64px;
+      }
+
+      #pelicula4, #pelicula5, #pelicula6 {
+        margin-top: 250px;
+      }
+
+      #pelicula4 {
+        margin-left: 90px;
+      }
+
+      #pelicula5 {
+        margin-left: 415px;
+      }
+
+      #pelicula6 {
+        margin-left: 744px;
+      }
+
+      #h21 {
+        margin-left: 65px;
+        padding-top: 117px;
+      }
+
+      #h22 {
+        margin-left: 370px;
+        padding-top: 117px;
+      }
+
+      #h23 {
+        margin-left: 700px;
+        padding-top: 117px;
+      }
+
+      #h24, #h25, #h26 {
+        margin-top: 221px;
+      }
+
+      #h24 {
+        margin-left: 40px;
+      }
+
+      #h25 {
+        margin-left: 370px;
+      }
+
+      #h26 {
+        margin-left: 690px;
+      }
+
+      #pelicula4,
+      #cite4 {
+        animation: enterAnimation 2.5s forwards;
+      }
+
+      #pelicula5,
+      #cite5 {
+        animation: enterAnimation 2.25s forwards;
+      }
+
+      #pelicula6,
+      #cite6 {
+        animation: enterAnimation 2s forwards;
+      }
+
+      img {
+        display: flex;
       }
     </style>
   </head>
@@ -40,6 +144,9 @@
           <h2 id="h21">1</h2>
           <h2 id="h22">2</h2>
           <h2 id="h23">3</h2>
+          <h2 id="h24">4</h2>
+          <h2 id="h25">5</h2>
+          <h2 id="h26">6</h2>
           <a href="https://github.com/martiespinosa" target="_blank">
             <h3 id="minombre">Martí Espinosa Farran</h3>
           </a>
@@ -50,12 +157,13 @@
             <h1 id="top">Top 3 lenguajes de programación mas usados</h1>
           </a>
 
+          <!-- TOP #1 -->
           <div id="pelicula1" class="pelicula">
             <a
               href="https://www.tiobe.com/tiobe-index/python/"
               target="_blank"
             >
-              <img src="fotos/py.png" alt="cadena" id="img1" class="img" />
+              <img src="fotos/py (1).png" alt="cadena" id="img1" class="img" />
             </a>
           </div>
           <footer>
@@ -64,11 +172,12 @@
               target="_blank"
             >
               <cite id="cite1"
-                >Python&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13.33%</cite
+                >Python&nbsp;&nbsp;&nbsp;&nbsp;13.33%</cite
               >
             </a>
           </footer>
 
+          <!-- TOP #2 -->
           <div id="pelicula2" class="pelicula">
             <a
               href="https://www.tiobe.com/tiobe-index/c/"
@@ -82,10 +191,11 @@
               href="https://www.tiobe.com/tiobe-index/c/"
               target="_blank"
             >
-              <cite id="cite2">C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11.41%</cite>
+              <cite id="cite2">C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11.41%</cite>
             </a>
           </footer>
 
+          <!-- TOP #3 -->
           <div id="pelicula3" class="pelicula">
             <a
               href="https://www.tiobe.com/tiobe-index/cplusplus/"
@@ -104,9 +214,79 @@
               href="https://www.tiobe.com/tiobe-index/cplusplus/"
               target="_blank"
             >
-              <cite id="cite3">C++&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10.63%</cite>
+              <cite id="cite3">C++&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10.63%</cite>
             </a>
           </footer>
+
+          <!-- TOP #4 -->
+          <div id="pelicula4" class="pelicula">
+            <a
+              href="https://www.tiobe.com/tiobe-index/cplusplus/"
+              target="_blank"
+            >
+              <img
+                src=""
+                alt="cadena"
+                id="img3"
+                class="img"
+              />
+            </a>
+          </div>
+          <footer>
+            <a
+              href="https://www.tiobe.com/tiobe-index/cplusplus/"
+              target="_blank"
+            >
+              <cite id="cite4">Java&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10.33%</cite>
+            </a>
+          </footer>
+
+          <!-- TOP #5 -->
+          <div id="pelicula5" class="pelicula">
+            <a
+              href="https://www.tiobe.com/tiobe-index/cplusplus/"
+              target="_blank"
+            >
+              <img
+                src=""
+                alt="cadena"
+                id="img3"
+                class="img"
+              />
+            </a>
+          </div>
+          <footer>
+            <a
+              href="https://www.tiobe.com/tiobe-index/cplusplus/"
+              target="_blank"
+            >
+              <cite id="cite5">C#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.04%</cite>
+            </a>
+          </footer>
+
+          <!-- TOP #6 -->
+          <div id="pelicula6" class="pelicula">
+            <a
+              href="https://www.tiobe.com/tiobe-index/cplusplus/"
+              target="_blank"
+            >
+              <img
+                src=""
+                alt="cadena"
+                id="img3"
+                class="img"
+              />
+            </a>
+          </div>
+          <footer>
+            <a
+              href="https://www.tiobe.com/tiobe-index/cplusplus/"
+              target="_blank"
+            >
+              <cite id="cite6">JavaScript&nbsp;3.29%</cite>
+            </a>
+          </footer>
+          
         </section>
       </center>
     </div>
