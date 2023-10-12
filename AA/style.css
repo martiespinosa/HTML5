@@ -1,0 +1,27 @@
+div {
+    width: 90%;
+    height: 100px;
+    margin: 5%;
+    border-radius: 10px;
+    box-shadow: 5px 5px 30px rgb(163, 163, 163);
+}
+
+#amarillo {
+    background-color: #E3C457;
+    color: #E3C457;
+}
+
+#azul {
+    background-color: #57AAE0;
+    color: #57AAE0;
+}
+
+#rojo {
+    background-color: #E35858;
+    color: #E35858;
+}
+
+#verde {
+    background-color: #58E366;
+    color: #58E366;
+}
