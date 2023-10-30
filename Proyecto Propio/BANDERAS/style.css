@@ -15,7 +15,7 @@
 }
 
 p.blink {
-  font-size: 44px;
+  font-size: 58px;
   text-align: center;
   padding-top: 25%;
   color: #4ec87d;
@@ -65,7 +65,7 @@ h1 {
   position: absolute;
   font-size: 400px;
   left: 50px;
-  top: 30px;
+  top: 10%;
   opacity: .8;
 }
 
@@ -85,7 +85,7 @@ input[type="radio"] {
   cursor: pointer;
   margin-top: 0;
   vertical-align: middle;
-  accent-color: #4ec85a;
+  /* accent-color: #4ec85a; */
   appearance: none;
 
   border-radius: 50%;
@@ -94,7 +94,7 @@ input[type="radio"] {
 }
 
 input:checked {
-  background-color: #4ec85a;
+  background-color: orange;
 }
 
 label {
@@ -151,6 +151,13 @@ label {
   border-radius: 100%;
   font-size: 20px;
   cursor: pointer;
+  opacity: .6;
+}
+
+#score {
+  font-size: 88px;
+  font-weight: bold;
+  color: #4ec87d;
 }
 
 
