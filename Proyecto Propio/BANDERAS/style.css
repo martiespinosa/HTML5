@@ -14,7 +14,7 @@
   }
 }
 
-p.blink {
+p.blink, #score {
   font-size: 58px;
   text-align: center;
   padding-top: 25%;
@@ -25,8 +25,11 @@ p.blink {
   0% {
     opacity: 1; /* Comienza con opacidad completa */
   }
-  50% {
-    opacity: 0; /* Opacidad a la mitad de la animación (invisible) */
+  40% {
+    opacity: 1; /* Opacidad completa durante el 40% de la animación */
+  }
+  60% {
+    opacity: 0; /* Opacidad a cero durante el 20% de la animación (invisible) */
   }
   100% {
     opacity: 1; /* Opacidad completa nuevamente */
@@ -34,13 +37,25 @@ p.blink {
 }
 
 .blink {
-  animation: blink 2.5s infinite; /* Aplica la animación llamada "blink" durante 2.5 segundos, repetido infinitamente */
+  animation: blink 3s infinite; /* Aplica la animación llamada "blink" durante 2.5 segundos, repetido infinitamente */
 }
+
+
+#sec {
+  opacity: 0; /* La página se carga inicialmente con opacidad 0 */
+  transition: opacity 0.5s ease-in-out; /* Transición suave para la opacidad */
+}
+
+
 
 
 * {
   margin: 0px;
   padding: 0px;
+}
+
+*:focus {
+  outline: none;
 }
 
 body {
@@ -66,7 +81,7 @@ h1 {
   font-size: 400px;
   left: 50px;
   top: 10%;
-  opacity: .8;
+  opacity: .85;
 }
 
 .options {
@@ -93,8 +108,9 @@ input[type="radio"] {
   transition: 0.2s all linear;
 }
 
-input:checked {
-  background-color: orange;
+input[type="radio"]:checked {
+  /* margin: -5px; */
+  background-color: rgba(255, 166, 0, .9);
 }
 
 label {
@@ -281,13 +297,13 @@ section {
 
 @keyframes animate {
   0% {
-    transform: translateY(0) rotate(0deg);
+    transform: translateY(0);
     opacity: 1;
     border-radius: 100%;
   }
 
   100% {
-    transform: translateY(-1000px) rotate(720deg);
+    transform: translateY(-1000px);
     opacity: 0;
     border-radius: 100%;
   }

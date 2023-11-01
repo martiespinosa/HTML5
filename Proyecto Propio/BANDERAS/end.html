@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guess the flag</title>
+    <title>Score</title>
     <link rel="icon" href="icon_spain.png" type="image/png">
 
     <link rel="stylesheet" href="style.css">    
 </head>
 
-<body>
+<body onload="score()">
     <div class="context">
-        <section>
+        <section id="sec">
             <h1>SCORE</h1>
-            <p id="score" class="blink"></p>
+            <p id="score"></p>
+            <p class="blink" style="padding-top: 10%; font-size: 33px;">Press spacebar to start again</p>
         </section>
     </div>
 
