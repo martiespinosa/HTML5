@@ -10,9 +10,23 @@ function getRandomElements(dictionary, count) {
 }
 
 
+function getRandomCountry() {
+    // Generar un índice aleatorio entre 0 y el tamaño de la lista de países
+    let randomIndex = Math.floor(Math.random() * fullCountryNames.length);
+    // Devolver el país en el índice aleatorio
+    return fullCountryNames[randomIndex];
+}
+
+
+function score(contadorAciertos) {
+    document.getElementById('score').innerHTML = contadorAciertos + ' / 10';
+}
+
+
 // let fullFlagDictionaryEspanyol = {
 //     "🇦🇨": "Islas del Canal",
 //     "🇦🇩": "Andorra",
+//     "🇺🇸": "Estados Unidos de America"
 //     "🇦🇪": "Emiratos Árabes Unidos",
 //     "🇦🇫": "Afganistán",
 //     "🇦🇬": "Antigua y Barbuda",
@@ -61,7 +75,6 @@ function getRandomElements(dictionary, count) {
 //     "🇨🇲": "Camerún",
 //     "🇨🇳": "China",
 //     "🇨🇴": "Colombia",
-//     "🇨🇵": "Clipperton",
 //     "🇨🇷": "Costa Rica",
 //     "🇨🇺": "Cuba",
 //     "🇨🇻": "Cabo Verde",
@@ -70,13 +83,11 @@ function getRandomElements(dictionary, count) {
 //     "🇨🇾": "Chipre",
 //     "🇨🇿": "Chequia",
 //     "🇩🇪": "Alemania",
-//     "🇩🇬": "Diego García",
 //     "🇩🇯": "Yibuti",
 //     "🇩🇰": "Dinamarca",
 //     "🇩🇲": "Dominica",
 //     "🇩🇴": "República Dominicana",
 //     "🇩🇿": "Argelia",
-//     "🇪🇦": "Ceuta y Melilla",
 //     "🇪🇨": "Ecuador",
 //     "🇪🇪": "Estonia",
 //     "🇪🇬": "Egipto",
@@ -220,6 +231,7 @@ function getRandomElements(dictionary, count) {
 let fullFlagDictionary = {
     "🇦🇨": "Channel Islands",
     "🇦🇩": "Andorra",
+    "🇺🇸": "United States of America",
     "🇦🇪": "United Arab Emirates",
     "🇦🇫": "Afghanistan",
     "🇦🇬": "Antigua and Barbuda",
@@ -268,7 +280,6 @@ let fullFlagDictionary = {
     "🇨🇲": "Cameroon",
     "🇨🇳": "China",
     "🇨🇴": "Colombia",
-    "🇨🇵": "Clipperton Island",
     "🇨🇷": "Costa Rica",
     "🇨🇺": "Cuba",
     "🇨🇻": "Cape Verde",
@@ -277,13 +288,11 @@ let fullFlagDictionary = {
     "🇨🇾": "Cyprus",
     "🇨🇿": "Czech Republic",
     "🇩🇪": "Germany",
-    "🇩🇬": "Diego Garcia",
     "🇩🇯": "Djibouti",
     "🇩🇰": "Denmark",
     "🇩🇲": "Dominica",
     "🇩🇴": "Dominican Republic",
     "🇩🇿": "Algeria",
-    "🇪🇦": "Ceuta and Melilla",
     "🇪🇨": "Ecuador",
     "🇪🇪": "Estonia",
     "🇪🇬": "Egypt",
@@ -419,6 +428,206 @@ let fullFlagDictionary = {
     "🇸🇩": "Sudan"
 };
 
+let fullCountryNames = [
+    "Channel Islands",
+    "Andorra",
+    "United States of America",
+    "United Arab Emirates",
+    "Afghanistan",
+    "Antigua and Barbuda",
+    "Anguilla",
+    "Albania",
+    "Armenia",
+    "Angola",
+    "Antarctica",
+    "Argentina",
+    "American Samoa",
+    "Austria",
+    "Australia",
+    "Aruba",
+    "Åland Islands",
+    "Azerbaijan",
+    "Bosnia and Herzegovina",
+    "Barbados",
+    "Bangladesh",
+    "Belgium",
+    "Burkina Faso",
+    "Bulgaria",
+    "Bahrain",
+    "Burundi",
+    "Benin",
+    "Saint Barthélemy",
+    "Bermuda",
+    "Brunei",
+    "Bolivia",
+    "Caribbean Netherlands",
+    "Brazil",
+    "Bahamas",
+    "Bhutan",
+    "Bouvet Island",
+    "Botswana",
+    "Belarus",
+    "Belize",
+    "Canada",
+    "Cocos (Keeling) Islands",
+    "Democratic Republic of the Congo",
+    "Central African Republic",
+    "Congo",
+    "Switzerland",
+    "Ivory Coast",
+    "Cook Islands",
+    "Chile",
+    "Cameroon",
+    "China",
+    "Colombia",
+    "Costa Rica",
+    "Cuba",
+    "Cape Verde",
+    "Curaçao",
+    "Christmas Island",
+    "Cyprus",
+    "Czech Republic",
+    "Germany",
+    "Djibouti",
+    "Denmark",
+    "Dominica",
+    "Dominican Republic",
+    "Algeria",
+    "Ecuador",
+    "Estonia",
+    "Egypt",
+    "Western Sahara",
+    "Eritrea",
+    "Spain",
+    "Ethiopia",
+    "Finland",
+    "Fiji",
+    "Falkland Islands",
+    "Faroe Islands",
+    "France",
+    "Gabon",
+    "United Kingdom",
+    "Grenada",
+    "Georgia",
+    "French Guiana",
+    "Guernsey",
+    "Ghana",
+    "Gibraltar",
+    "Greenland",
+    "Gambia",
+    "Guinea",
+    "Guadeloupe",
+    "Equatorial Guinea",
+    "Greece",
+    "South Georgia and the South Sandwich Islands",
+    "Guatemala",
+    "Guam",
+    "Guinea-Bissau",
+    "Guyana",
+    "Hong Kong",
+    "Heard Island and McDonald Islands",
+    "Honduras",
+    "Croatia",
+    "Haiti",
+    "Hungary",
+    "Canary Islands",
+    "Indonesia",
+    "Ireland",
+    "Israel",
+    "Isle of Man",
+    "India",
+    "British Indian Ocean Territory",
+    "Iraq",
+    "Iran",
+    "Iceland",
+    "Italy",
+    "Jersey",
+    "Jamaica",
+    "Jordan",
+    "Japan",
+    "Kenya",
+    "Kyrgyzstan",
+    "Cambodia",
+    "Kiribati",
+    "Comoros",
+    "Saint Kitts and Nevis",
+    "North Korea",
+    "South Korea",
+    "Kuwait",
+    "Cayman Islands",
+    "Kazakhstan",
+    "Laos",
+    "Lebanon",
+    "Saint Lucia",
+    "Liechtenstein",
+    "Sri Lanka",
+    "Liberia",
+    "Lesotho",
+    "Lithuania",
+    "Luxembourg",
+    "Latvia",
+    "Libya",
+    "Morocco",
+    "Monaco",
+    "Moldova",
+    "Montenegro",
+    "Saint Martin",
+    "Madagascar",
+    "Marshall Islands",
+    "North Macedonia",
+    "Mali",
+    "Myanmar",
+    "Mongolia",
+    "Macao",
+    "Northern Mariana Islands",
+    "Martinique",
+    "Mauritania",
+    "Montserrat",
+    "Malta",
+    "Mauritius",
+    "Maldives",
+    "Malawi",
+    "Mexico",
+    "Malaysia",
+    "Mozambique",
+    "Namibia",
+    "New Caledonia",
+    "Niger",
+    "Norfolk Island",
+    "Nigeria",
+    "Nicaragua",
+    "Netherlands",
+    "Norway",
+    "Nepal",
+    "Niue",
+    "New Zealand",
+    "Oman",
+    "Panama",
+    "Peru",
+    "French Polynesia",
+    "Papua New Guinea",
+    "Philippines",
+    "Pakistan",
+    "Poland",
+    "Saint Pierre and Miquelon",
+    "Pitcairn Islands",
+    "Puerto Rico",
+    "Palestinian Territories",
+    "Portugal",
+    "Palau",
+    "Paraguay",
+    "Qatar",
+    "Réunion",
+    "Romania",
+    "Serbia",
+    "Russia",
+    "Rwanda",
+    "Saudi Arabia",
+    "Solomon Islands",
+    "Seychelles",
+    "Sudan"
+];
+
 
 
 let dictionary10 = getRandomElements(fullFlagDictionary, 10);
@@ -433,20 +642,32 @@ document.addEventListener('keydown', function (event) {
 
 // PONER BANDERA Y PAIS EN UNA POSICION RANDOM DE 1 A 3 CUANDO SE CARGA LA PAGINA FLAG.HTML
 let opcionCorrectaNum = Math.floor(Math.random() * 3) + 1;
-let opcionCorrecta = document.getElementById('opcion'+opcionCorrectaNum);
+let opcionCorrecta = document.getElementById('opcion' + opcionCorrectaNum);
 let flag = document.getElementsByClassName('flag')[0];
 document.addEventListener('DOMContentLoaded', function() {
     flag.innerHTML = flag10[0];
-    opcionCorrecta.innerHTML = countries10[0]
+    opcionCorrecta.innerHTML = countries10[0];
 });
+// PONE LOS PAISES INCORRECTOS EN LOS 2 LABELS RESTANTES
+if (opcionCorrectaNum === 1) {
+    document.getElementById('opcion2').innerHTML = getRandomCountry();
+    document.getElementById('opcion3').innerHTML = getRandomCountry();
+} else if (opcionCorrectaNum === 2) {
+    document.getElementById('opcion1').innerHTML = getRandomCountry();
+    document.getElementById('opcion3').innerHTML = getRandomCountry();
+} else {
+    document.getElementById('opcion1').innerHTML = getRandomCountry();
+    document.getElementById('opcion2').innerHTML = getRandomCountry();
+}
 
-
+// ASIGNA EL RADIO BUTTON CORRECTO
+let radioButtonCorrecto = document.getElementById('radio' + opcionCorrectaNum);
 
 
 var flag_no = 0;
 
-var aciertos = 0;
-var fallos = 0;
+var contadorAciertos = 0;
+var contadorFallos = 0;
 
 
 
@@ -479,15 +700,15 @@ solveButton.addEventListener('click', function() {
         nextButton.disabled = false;
         nextButton.style.display = 'block';
                 
-        if (selectedRadioButton.id !== "radio2") {
+        if (selectedRadioButton.id !== "radio" + opcionCorrectaNum) {
             selectedRadioButton.style.backgroundColor = 'red';
-            document.getElementById("radio2").style.backgroundColor = '#4ec85a';
+            document.getElementById("radio" + opcionCorrectaNum).style.backgroundColor = '#4ec85a';
             document.getElementsByClassName("progress_number")[flag_no].style.backgroundColor = 'red';
-            fallos++;
+            contadorFallos++;            
         } else {
-            document.getElementById("radio2").style.backgroundColor = '#4ec85a';
+            document.getElementById("radio" + opcionCorrectaNum).style.backgroundColor = '#4ec85a';
             document.getElementsByClassName("progress_number")[flag_no].style.backgroundColor = '#4ec85a'
-            aciertos++;
+            contadorAciertos++;
         }
 
         [...radioButtons].forEach(function(radioButton) {
@@ -495,7 +716,7 @@ solveButton.addEventListener('click', function() {
         });
         
         if (flag_no == 9) {
-            nextButton.innerHTML = "Finish"
+            nextButton.innerHTML = "Finish"            
         }
     }
 });
@@ -505,26 +726,47 @@ solveButton.addEventListener('click', function() {
 
 nextButton.addEventListener("click", function() {
     if (flag_no == 9) {
-        window.location.href = "end.html";              
+        window.location.href = "end.html";     
     }
 
     flag_no++;
 
-    // AQUI ESTO SE TIENE QUE CAMBIAR
-    document.getElementById("opcion1").innerHTML = ""
-    document.getElementById("opcion2").innerHTML = countries10[flag_no]
-    document.getElementById("opcion3").innerHTML = ""
+    // BORRA LOS LABEL ANTERIORES
+    document.getElementById('opcion1').innerHTML = "";
+    document.getElementById('opcion2').innerHTML = "";
+    document.getElementById('opcion3').innerHTML = "";
+
+    // PONE EL PAIS CORRECTO EN UN LABEL RANDOM DE 1 A 3
+    opcionCorrectaNum = Math.floor(Math.random() * 3) + 1;
+    opcionCorrecta = document.getElementById('opcion' + opcionCorrectaNum);
+    opcionCorrecta.innerHTML = countries10[flag_no];
+    // PONE LOS PAISES INCORRECTOS EN LOS 2 LABELS RESTANTES
+    if (opcionCorrectaNum === 1) {
+        document.getElementById('opcion2').innerHTML = getRandomCountry();
+        document.getElementById('opcion3').innerHTML = getRandomCountry();
+    } else if (opcionCorrectaNum === 2) {
+        document.getElementById('opcion1').innerHTML = getRandomCountry();
+        document.getElementById('opcion3').innerHTML = getRandomCountry();
+    } else {
+        document.getElementById('opcion1').innerHTML = getRandomCountry();
+        document.getElementById('opcion2').innerHTML = getRandomCountry();
+    }
+
+    // REASIGNA EL RADIO BUTTON CORRECTO
+    radioButtonCorrecto = document.getElementById('radio' + opcionCorrectaNum);
 
     solveButton.disabled = false;
     solveButton.style.display = 'block';
     nextButton.disabled = true;
     nextButton.style.display = 'none';
 
+    // PONE BANDERA
     const flagElement = document.querySelector('.flag');
     if (flagElement) {
         currentIndex = (currentIndex + 1) % flag10.length;
         flagElement.innerHTML = flag10[currentIndex];
     }
+
     const radioButtons = document.querySelectorAll('input[type="radio"]');
     radioButtons.forEach(function(radioButton) {
         radioButton.style.backgroundColor = '';
@@ -543,4 +785,44 @@ nextButton.addEventListener("click", function() {
     }); 
 });
 
+
+
+// CONTROLADOR DEL TAB
+// Obtén todos los elementos con el atributo tabindex
+const elementosEnfocables = document.querySelectorAll('[tabindex]');
+
+// Convierte la lista de nodos en un array para facilitar el manejo
+const elementosArray = Array.from(elementosEnfocables);
+
+// Agrega un controlador de eventos para prevenir el comportamiento predeterminado del tabulado
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Tab') {
+        // Obtén el elemento que actualmente tiene el foco
+        const elementoConFoco = document.activeElement;
+
+        // Obtén el índice del elemento actual en el array de elementos enfocables
+        const indice = elementosArray.indexOf(elementoConFoco);
+
+        // Encuentra el próximo elemento enfocable en el array
+        let siguienteElemento;
+        if (event.shiftKey) {
+            // Si se presiona Shift + Tab, mueve al elemento anterior
+            siguienteElemento = elementosArray[indice - 1];
+        } else {
+            // Si solo se presiona Tab, mueve al siguiente elemento
+            siguienteElemento = elementosArray[indice + 1];
+        }
+
+        // Si no hay siguiente elemento, vuelve al primer elemento enfocable
+        if (!siguienteElemento) {
+            siguienteElemento = elementosArray[event.shiftKey ? elementosArray.length - 1 : 0];
+        }
+
+        // Establece el foco en el siguiente elemento
+        siguienteElemento.focus();
+
+        // Previene el comportamiento predeterminado del tabulado
+        event.preventDefault();
+    }
+});
 
