@@ -35,9 +35,39 @@ function getRandomCountry() {
 }
 
 
-function score() {
-    document.getElementById('score').innerHTML = contadorAciertos + ' / 10';
+var contadorAciertos = 0;
+var contadorFallos = 0;
+
+function score(contadorAciertos) {
+    let scoreOutOfTen = contadorAciertos + ' / 10';
+    document.getElementById('score').innerHTML = scoreOutOfTen;
 }
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Verifica si el archivo actual es "pagina1.html"
+    if (window.location.pathname.includes('pagina1.html')) {
+        // Código específico para pagina1.html
+        var miParrafo = document.getElementById('miParrafo');
+        var miVariable = 'Hola desde pagina1.html';
+        miParrafo.textContent = miVariable;
+    }
+    // Verifica si el archivo actual es "pagina2.html"
+    else if (window.location.pathname.includes('pagina2.html')) {
+        // Código específico para pagina2.html
+        var miParrafo = document.getElementById('miParrafo');
+        var miVariable = 'Hola desde pagina2.html';
+        miParrafo.textContent = miVariable;
+    }
+    // Verifica si el archivo actual es "pagina3.html"
+    else if (window.location.pathname.includes('pagina3.html')) {
+        // Código específico para pagina3.html
+        var miParrafo = document.getElementById('miParrafo');
+        var miVariable = 'Hola desde pagina3.html';
+        miParrafo.textContent = miVariable;
+    }
+});
+
 
 
 // let fullFlagDictionaryEspanyol = {
@@ -687,8 +717,7 @@ let radioButtonCorrecto = document.getElementById('radio' + opcionCorrectaNum);
 
 var flag_no = 0;
 
-var contadorAciertos = 0;
-var contadorFallos = 0;
+
 
 
 
@@ -730,6 +759,9 @@ solveButton.addEventListener('click', function() {
             document.getElementById("radio" + opcionCorrectaNum).style.backgroundColor = '#4ec85a';
             document.getElementsByClassName("progress_number")[flag_no].style.backgroundColor = '#4ec85a'
             contadorAciertos++;
+            // Después de incrementar contadorAciertos en script.js
+            localStorage.setItem('contadorAciertos', contadorAciertos);
+            console.log('contadorAciertos guardado en el almacenamiento local:', contadorAciertos);
         }
 
         [...radioButtons].forEach(function(radioButton) {
@@ -747,7 +779,7 @@ solveButton.addEventListener('click', function() {
 
 nextButton.addEventListener("click", function() {
     if (flag_no == 9) {
-        window.location.href = "end.html";     
+        window.location.href = "end.html";
     } else {
 
         flag_no++;

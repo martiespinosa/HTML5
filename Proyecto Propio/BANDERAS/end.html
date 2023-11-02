@@ -3,16 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Score</title>
+    <title>Your score</title>
     <link rel="icon" href="icon_spain.png" type="image/png">
 
     <link rel="stylesheet" href="style.css">    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Obtiene el valor de contadorAciertos desde el almacenamiento local
+            var contadorAciertos = localStorage.getItem('contadorAciertos');
+
+            // Asegúrate de que contadorAciertos tiene un valor válido
+            console.log('Valor de contadorAciertos recuperado:', contadorAciertos);
+
+            // Convierte el valor a un número entero (puede ser necesario dependiendo de cómo se almacena en el localStorage)
+            contadorAciertos = parseInt(contadorAciertos);
+
+            // Llama a la función score() con el valor obtenido
+            score(contadorAciertos);
+        });
+    </script>
+    
 </head>
 
-<body onload="score()">
+<body onload="score(contadorAciertos)">
     <div class="context">
         <section id="sec">
-            <h1>SCORE</h1>
+            <h1>Your score</h1>
             <p id="score"></p>
             <p class="blink" style="padding-top: 10%; font-size: 33px;">Press spacebar to start again</p>
         </section>
@@ -33,6 +50,8 @@
         </ul>
       </div>
 
+    
+    
     <script src="script.js"></script>
 </body>
 </html>
