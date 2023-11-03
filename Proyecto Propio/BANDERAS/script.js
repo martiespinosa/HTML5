@@ -13,10 +13,12 @@ document.addEventListener('DOMContentLoaded', function() {
 function getRandomElements(dictionary, count) {
     let keys = Object.keys(dictionary);
     let randomElements = {};
-    for (let i = 0; i < count; i++) {
+    while (Object.keys(randomElements).length < count) {
         let randomIndex = Math.floor(Math.random() * keys.length);
         let randomKey = keys[randomIndex];
-        randomElements[randomKey] = dictionary[randomKey];
+        if (dictionary[randomKey]) {
+            randomElements[randomKey] = dictionary[randomKey];
+        }
     }
     return randomElements;
 }
@@ -24,19 +26,18 @@ function getRandomElements(dictionary, count) {
 
 function getRandomCountry() {
     let randomCountry;
-    // do {
+    do {
         // Generar un índice aleatorio entre 0 y el tamaño de la lista de países - 1
         let randomIndex = Math.floor(Math.random() * fullCountriesNames.length - 1);
         // Obtener el país en el índice aleatorio
         randomCountry = fullCountriesNames[randomIndex];
-    // } while (randomCountry === undefined || (randomCountry !== null && randomCountry === document.getElementById('opcion1').value) || (randomCountry !== null && randomCountry === document.getElementById('opcion2').value) || (randomCountry !== null && randomCountry === document.getElementById('opcion3').value));
+    } while (randomCountry === undefined || (randomCountry !== null && randomCountry === document.getElementById('opcion1').value) || (randomCountry !== null && randomCountry === document.getElementById('opcion2').value) || (randomCountry !== null && randomCountry === document.getElementById('opcion3').value));
     
     return randomCountry;
 }
 
 
-var contadorAciertos = 0;
-var contadorFallos = 0;
+
 
 function score(contadorAciertos) {
     let scoreOutOfTen = contadorAciertos + ' / 10';
@@ -1635,29 +1636,31 @@ document.addEventListener('keydown', function (event) {
     }
 });
 
-// PONE BANDERA Y PAIS EN UNA POSICION RANDOM DE 1 A 3 CUANDO SE CARGA LA PAGINA FLAG.HTML
-let opcionCorrectaNum = Math.floor(Math.random() * 3) + 1;
-let opcionCorrecta = document.getElementById('opcion' + opcionCorrectaNum);
-let flag = document.getElementsByClassName('flag')[0];
-document.addEventListener('DOMContentLoaded', function() {
-    flag.innerHTML = flag10[0];
-    opcionCorrecta.innerHTML = countries10[0];
-    console.log(countries10);
-});
-// PONE LOS PAISES INCORRECTOS EN LOS 2 LABELS RESTANTES
-if (opcionCorrectaNum === 1) {
-    document.getElementById('opcion2').innerHTML = getRandomCountry();
-    document.getElementById('opcion3').innerHTML = getRandomCountry();
-} else if (opcionCorrectaNum === 2) {
-    document.getElementById('opcion1').innerHTML = getRandomCountry();
-    document.getElementById('opcion3').innerHTML = getRandomCountry();
-} else {
-    document.getElementById('opcion1').innerHTML = getRandomCountry();
-    document.getElementById('opcion2').innerHTML = getRandomCountry();
-}
+if (window.location.href.includes('flag.html')) {
+    // PONE BANDERA Y PAIS EN UNA POSICION RANDOM DE 1 A 3 CUANDO SE CARGA LA PAGINA FLAG.HTML
+    var opcionCorrectaNum = Math.floor(Math.random() * 3) + 1;
+    var opcionCorrecta = document.getElementById('opcion' + opcionCorrectaNum);
+    var flag = document.getElementsByClassName('flag')[0];
+    document.addEventListener('DOMContentLoaded', function() {
+        flag.innerHTML = flag10[0];
+        opcionCorrecta.innerHTML = countries10[0];
+        console.log(countries10);
+    });
+    // PONE LOS PAISES INCORRECTOS EN LOS 2 LABELS RESTANTES
+    if (opcionCorrectaNum === 1) {
+        document.getElementById('opcion2').innerHTML = getRandomCountry();
+        document.getElementById('opcion3').innerHTML = getRandomCountry();
+    } else if (opcionCorrectaNum === 2) {
+        document.getElementById('opcion1').innerHTML = getRandomCountry();
+        document.getElementById('opcion3').innerHTML = getRandomCountry();
+    } else {
+        document.getElementById('opcion1').innerHTML = getRandomCountry();
+        document.getElementById('opcion2').innerHTML = getRandomCountry();
+    }
 
-// ASIGNA EL RADIO BUTTON CORRECTO
-let radioButtonCorrecto = document.getElementById('radio' + opcionCorrectaNum);
+    // ASIGNA EL RADIO BUTTON CORRECTO
+    var radioButtonCorrecto = document.getElementById('radio' + opcionCorrectaNum);
+}
 
 
 var flag_no = 0;
@@ -1667,7 +1670,8 @@ var flag_no = 0;
 
 
 
-
+var contadorAciertos = 0;
+var contadorFallos = 0;
 
 // let countryList = ["Puerto Rico", "Costa de Marfil", "Suecia", "Sudáfrica", "China", "Argentina", "India", "Polonia", "Reino Unido", "Albania"]
 // let options = ["Costa Rica", "Puerto Rico", "Cuba", "Costa Rica", "Costa de Marfil", "Cuba", "Costa Rica", "Suecia", "Cuba", "Costa Rica", "Sudáfrica", "Cuba", "Costa Rica", "China", "Cuba", "Costa Rica", "Argentina", "Cuba", "Costa Rica", "India", "Cuba", "Costa Rica", "Polonia", "Cuba", "Costa Rica", "Reino Unido", "Cuba", "Costa Rica", "Albania", "Cuba"]
@@ -1678,112 +1682,112 @@ const radioButtons = document.querySelectorAll('input[name="pais"]');
 const solveButton = document.getElementById('solve');
 const nextButton = document.getElementById('next');
 
-solveButton.addEventListener('click', function() {
-    let isChecked = false;
-    let selectedRadioButton = null;
+if (window.location.href.includes('flag.html')) {
+    solveButton.addEventListener('click', function() {
+        let isChecked = false;
+        let selectedRadioButton = null;
 
-    radioButtons.forEach(function(radioButton) {
-        if (radioButton.checked) {
-            isChecked = true;
-            selectedRadioButton = radioButton;
+        radioButtons.forEach(function(radioButton) {
+            if (radioButton.checked) {
+                isChecked = true;
+                selectedRadioButton = radioButton;
+            }
+        });
+
+        if (isChecked) {
+            solveButton.disabled = true;
+            solveButton.style.display = 'none';
+            nextButton.disabled = false;
+            nextButton.style.display = 'block';
+                    
+            if (selectedRadioButton.id !== "radio" + opcionCorrectaNum) {
+                selectedRadioButton.style.backgroundColor = 'rgba(255, 0, 0, .8';
+                document.getElementById("radio" + opcionCorrectaNum).style.backgroundColor = '#4ec85a';
+                document.getElementsByClassName("progress_number")[flag_no].style.backgroundColor = 'rgba(255, 0, 0, .8';
+                contadorFallos++;            
+            } else {
+                document.getElementById("radio" + opcionCorrectaNum).style.backgroundColor = '#4ec85a';
+                document.getElementsByClassName("progress_number")[flag_no].style.backgroundColor = '#4ec85a'
+                contadorAciertos++;
+                // Después de incrementar contadorAciertos en script.js
+                localStorage.setItem('contadorAciertos', contadorAciertos);
+                console.log('contadorAciertos guardado en el almacenamiento local:', contadorAciertos);
+            }
+
+            [...radioButtons].forEach(function(radioButton) {
+                radioButton.disabled = true;
+            });
+            
+            if (flag_no == 9) {
+                nextButton.innerHTML = "Finish"            
+            }
         }
     });
 
-    if (isChecked) {
-        solveButton.disabled = true;
-        solveButton.style.display = 'none';
-        nextButton.disabled = false;
-        nextButton.style.display = 'block';
-                
-        if (selectedRadioButton.id !== "radio" + opcionCorrectaNum) {
-            selectedRadioButton.style.backgroundColor = 'rgba(255, 0, 0, .8';
-            document.getElementById("radio" + opcionCorrectaNum).style.backgroundColor = '#4ec85a';
-            document.getElementsByClassName("progress_number")[flag_no].style.backgroundColor = 'rgba(255, 0, 0, .8';
-            contadorFallos++;            
-        } else {
-            document.getElementById("radio" + opcionCorrectaNum).style.backgroundColor = '#4ec85a';
-            document.getElementsByClassName("progress_number")[flag_no].style.backgroundColor = '#4ec85a'
-            contadorAciertos++;
-            // Después de incrementar contadorAciertos en script.js
-            localStorage.setItem('contadorAciertos', contadorAciertos);
-            console.log('contadorAciertos guardado en el almacenamiento local:', contadorAciertos);
-        }
 
-        [...radioButtons].forEach(function(radioButton) {
-            radioButton.disabled = true;
-        });
-        
+    nextButton.addEventListener("click", function() {
         if (flag_no == 9) {
-            nextButton.innerHTML = "Finish"            
-        }
-    }
-});
+            window.location.href = "end.html";
+        } else {
 
+            flag_no++;
 
+            // BORRA LOS LABEL ANTERIORES
+            document.getElementById('opcion1').innerHTML = "";
+            document.getElementById('opcion2').innerHTML = "";
+            document.getElementById('opcion3').innerHTML = "";
 
+            // PONE EL PAIS CORRECTO EN UN LABEL RANDOM DE 1 A 3
+            opcionCorrectaNum = Math.floor(Math.random() * 3) + 1;
+            opcionCorrecta = document.getElementById('opcion' + opcionCorrectaNum);
+            opcionCorrecta.innerHTML = countries10[flag_no];
+            console.log(countries10[flag_no]);
+            // PONE LOS PAISES INCORRECTOS EN LOS 2 LABELS RESTANTES
+            if (opcionCorrectaNum === 1) {
+                document.getElementById('opcion2').innerHTML = getRandomCountry();
+                document.getElementById('opcion3').innerHTML = getRandomCountry();
+            } else if (opcionCorrectaNum === 2) {
+                document.getElementById('opcion1').innerHTML = getRandomCountry();
+                document.getElementById('opcion3').innerHTML = getRandomCountry();
+            } else if (opcionCorrectaNum === 3) {
+                document.getElementById('opcion1').innerHTML = getRandomCountry();
+                document.getElementById('opcion2').innerHTML = getRandomCountry();
+            }
 
-nextButton.addEventListener("click", function() {
-    if (flag_no == 9) {
-        window.location.href = "end.html";
-    } else {
+            // REASIGNA EL RADIO BUTTON CORRECTO
+            radioButtonCorrecto = document.getElementById('radio' + opcionCorrectaNum);
 
-        flag_no++;
+            solveButton.disabled = false;
+            solveButton.style.display = 'block';
+            nextButton.disabled = true;
+            nextButton.style.display = 'none';
 
-        // BORRA LOS LABEL ANTERIORES
-        document.getElementById('opcion1').innerHTML = "";
-        document.getElementById('opcion2').innerHTML = "";
-        document.getElementById('opcion3').innerHTML = "";
+            // PONE BANDERA
+            const flagElement = document.querySelector('.flag');
+            if (flagElement) {
+                currentIndex = (currentIndex + 1) % flag10.length;
+                flagElement.innerHTML = flag10[currentIndex];
+            }
 
-        // PONE EL PAIS CORRECTO EN UN LABEL RANDOM DE 1 A 3
-        opcionCorrectaNum = Math.floor(Math.random() * 3) + 1;
-        opcionCorrecta = document.getElementById('opcion' + opcionCorrectaNum);
-        opcionCorrecta.innerHTML = countries10[flag_no];
-        console.log(countries10[flag_no]);
-        // PONE LOS PAISES INCORRECTOS EN LOS 2 LABELS RESTANTES
-        if (opcionCorrectaNum === 1) {
-            document.getElementById('opcion2').innerHTML = getRandomCountry();
-            document.getElementById('opcion3').innerHTML = getRandomCountry();
-        } else if (opcionCorrectaNum === 2) {
-            document.getElementById('opcion1').innerHTML = getRandomCountry();
-            document.getElementById('opcion3').innerHTML = getRandomCountry();
-        } else if (opcionCorrectaNum === 3) {
-            document.getElementById('opcion1').innerHTML = getRandomCountry();
-            document.getElementById('opcion2').innerHTML = getRandomCountry();
-        }
+            const radioButtons = document.querySelectorAll('input[type="radio"]');
+            radioButtons.forEach(function(radioButton) {
+                radioButton.style.backgroundColor = '';
 
-        // REASIGNA EL RADIO BUTTON CORRECTO
-        radioButtonCorrecto = document.getElementById('radio' + opcionCorrectaNum);
-
-        solveButton.disabled = false;
-        solveButton.style.display = 'block';
-        nextButton.disabled = true;
-        nextButton.style.display = 'none';
-
-        // PONE BANDERA
-        const flagElement = document.querySelector('.flag');
-        if (flagElement) {
-            currentIndex = (currentIndex + 1) % flag10.length;
-            flagElement.innerHTML = flag10[currentIndex];
-        }
-
-        const radioButtons = document.querySelectorAll('input[type="radio"]');
-        radioButtons.forEach(function(radioButton) {
-            radioButton.style.backgroundColor = '';
-
-            // Agregar evento change para restablecer el fondo cuando se selecciona un botón de radio
-            radioButton.addEventListener('change', function() {
-                if (radioButton.checked) {
-                    radioButton.style.backgroundColor = ''; // Esto restablece el fondo al valor predeterminado
-                }
+                // Agregar evento change para restablecer el fondo cuando se selecciona un botón de radio
+                radioButton.addEventListener('change', function() {
+                    if (radioButton.checked) {
+                        radioButton.style.backgroundColor = ''; // Esto restablece el fondo al valor predeterminado
+                    }
+                });
             });
-        });
 
-        [...radioButtons].forEach(function(radioButton) {
-            radioButton.disabled = false;
-            radioButton.checked = false;
-        }); 
-    }
-});
+            [...radioButtons].forEach(function(radioButton) {
+                radioButton.disabled = false;
+                radioButton.checked = false;
+            }); 
+        }
+    });
+}
 
 
 
