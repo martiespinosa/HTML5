@@ -36,5 +36,13 @@
     
     
     <script src="script.js"></script>
+    <script>
+        // Recupera el valor de contadorAciertos del localStorage
+        var contadorAciertos = localStorage.getItem('contadorAciertos');
+        // Asegúrate de que contadorAciertos sea un número (puede ser una cadena al recuperarlo del localStorage)
+        contadorAciertos = parseInt(contadorAciertos);
+        // Llama a la función score con contadorAciertos como parámetro
+        score(contadorAciertos);
+    </script>
 </body>
 </html>
