@@ -26,17 +26,19 @@ function getRandomElements(dictionary, count) {
 
 function getRandomCountry() {
     let randomCountry;
+    let correctOption = opcionCorrecta.value;
+    
     do {
-        // Generar un índice aleatorio entre 0 y el tamaño de la lista de países - 1
         let randomIndex = Math.floor(Math.random() * fullCountriesNames.length);
-        // Obtener el país en el índice aleatorio
-        do {
-            randomCountry = fullCountriesNames[randomIndex];
-        } while (randomCountry === opcionCorrecta.value);
-    } while (randomCountry === undefined || (randomCountry !== null && (randomCountry === document.getElementById('opcion1').value || randomCountry === document.getElementById('opcion2').value || randomCountry === document.getElementById('opcion3').value)));
+        randomCountry = fullCountriesNames[randomIndex];
+    } while (randomCountry === correctOption || 
+             randomCountry === document.getElementById('opcion1').value ||
+             randomCountry === document.getElementById('opcion2').value ||
+             randomCountry === document.getElementById('opcion3').value);
     
     return randomCountry;
 }
+
 
 
 
