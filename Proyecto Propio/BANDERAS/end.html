@@ -6,24 +6,7 @@
     <title>Your score</title>
     <link rel="icon" href="icon_spain.png" type="image/png">
 
-    <link rel="stylesheet" href="style.css">    
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Obtiene el valor de contadorAciertos desde el almacenamiento local
-            var contadorAciertos = localStorage.getItem('contadorAciertos');
-
-            // Asegúrate de que contadorAciertos tiene un valor válido
-            console.log('Valor de contadorAciertos recuperado:', contadorAciertos);
-
-            // Convierte el valor a un número entero (puede ser necesario dependiendo de cómo se almacena en el localStorage)
-            contadorAciertos = parseInt(contadorAciertos);
-
-            // Llama a la función score() con el valor obtenido
-            score(contadorAciertos);
-        });
-    </script>
-    
+    <link rel="stylesheet" href="style.css">       
 </head>
 
 <body onload="score(contadorAciertos)">

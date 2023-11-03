@@ -81,7 +81,9 @@ h1 {
   position: absolute;
   font-size: 400px;
   left: 50px;
-  top: 10%;
+  top: 50%;
+  transform: translateX(-50%);
+  transform: translateY(-50%);
   opacity: .85;
 }
 

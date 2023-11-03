@@ -24,12 +24,12 @@ function getRandomElements(dictionary, count) {
 
 function getRandomCountry() {
     let randomCountry;
-    do {
+    // do {
         // Generar un índice aleatorio entre 0 y el tamaño de la lista de países - 1
         let randomIndex = Math.floor(Math.random() * fullCountriesNames.length - 1);
         // Obtener el país en el índice aleatorio
         randomCountry = fullCountriesNames[randomIndex];
-    } while (randomCountry === undefined || randomCountry === document.getElementById('opcion1').value || randomCountry === document.getElementById('opcion2').value || randomCountry === document.getElementById('opcion3').value);
+    // } while (randomCountry === undefined || (randomCountry !== null && randomCountry === document.getElementById('opcion1').value) || (randomCountry !== null && randomCountry === document.getElementById('opcion2').value) || (randomCountry !== null && randomCountry === document.getElementById('opcion3').value));
     
     return randomCountry;
 }
@@ -162,7 +162,6 @@ let fullFlagDictionary = {
     "🇬🇵": "Guadeloupe",
     "🇬🇶": "Equatorial Guinea",
     "🇬🇷": "Greece",
-    "🇬🇸": "South Georgia and the South Sandwich Islands",
     "🇬🇹": "Guatemala",
     "🇬🇺": "Guam",
     "🇬🇼": "Guinea-Bissau",
@@ -362,7 +361,6 @@ let fullCountriesNames = [
     "Guadeloupe",
     "Equatorial Guinea",
     "Greece",
-    "South Georgia and the South Sandwich Islands",
     "Guatemala",
     "Guam",
     "Guinea-Bissau",
@@ -931,11 +929,6 @@ let Dictionaty3PaisesPorBandera = {
         "pais": "Greece",
         "similar1": "Guadeloupe",
         "similar2": "Greenland"
-    },
-    "🇬🇸": {
-        "pais": "South Georgia and the South Sandwich Islands",
-        "similar1": "Grenada",
-        "similar2": "Guatemala"
     },
     "🇬🇹": {
         "pais": "Guatemala",
