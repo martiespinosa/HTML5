@@ -1,7 +1,7 @@
 // Verificar si el dispositivo es un PC
 if (window.innerWidth < 500 || window.innerHeight < 500) {
     // Redirigir a otra página
-    window.location.href = "error.html";
+    window.location.href = "html/error.html";
 }
 
 
@@ -54,31 +54,6 @@ function score(contadorAciertos) {
     let scoreOutOfTen = contadorAciertos + ' / 10';
     document.getElementById('score').innerHTML = scoreOutOfTen;
 }
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Verifica si el archivo actual es "pagina1.html"
-    if (window.location.pathname.includes('pagina1.html')) {
-        // Código específico para pagina1.html
-        var miParrafo = document.getElementById('miParrafo');
-        var miVariable = 'Hola desde pagina1.html';
-        miParrafo.textContent = miVariable;
-    }
-    // Verifica si el archivo actual es "pagina2.html"
-    else if (window.location.pathname.includes('pagina2.html')) {
-        // Código específico para pagina2.html
-        var miParrafo = document.getElementById('miParrafo');
-        var miVariable = 'Hola desde pagina2.html';
-        miParrafo.textContent = miVariable;
-    }
-    // Verifica si el archivo actual es "pagina3.html"
-    else if (window.location.pathname.includes('pagina3.html')) {
-        // Código específico para pagina3.html
-        var miParrafo = document.getElementById('miParrafo');
-        var miVariable = 'Hola desde pagina3.html';
-        miParrafo.textContent = miVariable;
-    }
-});
 
 
 
@@ -1532,8 +1507,8 @@ let countries10 = Object.values(dictionary10);
 document.addEventListener('keydown', function (event) {
     if (event.key === ' ') { // ' ' representa la tecla de espacio
         if (window.location.href.includes('index.html')) {
-            window.location.href = 'flag.html'; 
-        } else if (window.location.href.includes('end.html')) {
+            window.location.href = 'html/flag.html'; 
+        } else if (window.location.href.includes('score.html')) {
             window.location.href = 'flag.html'; 
         }
     }
@@ -1627,7 +1602,7 @@ if (window.location.href.includes('flag.html')) {
 
     nextButton.addEventListener("click", function() {
         if (flag_no == 9) {
-            window.location.href = "end.html";
+            window.location.href = "score.html";
         } else {
 
             flag_no++;
