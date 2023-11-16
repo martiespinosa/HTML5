@@ -1,22 +1,7 @@
-// Verificar la orientación al cargar la página
-window.addEventListener('load', function() {
-    checkOrientation();
-});
-
-// Verificar la orientación cuando cambie la orientación del dispositivo
-window.addEventListener('orientationchange', function() {
-    checkOrientation();
-});
-
-// Función para aplicar estilos según la orientación
-function checkOrientation() {
-    if (window.matchMedia("(orientation: portrait)").matches) {
-        // Cambiar a estilos para orientación vertical
-        document.querySelector('.contenedor').style.flexDirection = 'column';
-    } else {
-        // Restablecer a estilos por defecto
-        document.querySelector('.contenedor').style.flexDirection = 'row';
-    }
+// Verificar si el dispositivo es un PC
+if (window.innerWidth < 768 || window.innerHeight < 768) {
+    // Redirigir a otra página
+    window.location.href = "pagina_no_disponible.html";
 }
 
 

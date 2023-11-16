@@ -86,15 +86,6 @@ h1 {
   flex-wrap: wrap;
 }
 
-/* Estilos para orientación vertical */
-@media (max-width: 767px) {
-  #zzz {
-      flex-direction: column;
-  }
-}
-
-
-
 
 .flag {
   position: absolute;
