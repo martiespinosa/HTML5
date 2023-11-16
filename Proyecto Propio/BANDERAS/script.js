@@ -1,3 +1,25 @@
+// Verificar la orientación al cargar la página
+window.addEventListener('load', function() {
+    checkOrientation();
+});
+
+// Verificar la orientación cuando cambie la orientación del dispositivo
+window.addEventListener('orientationchange', function() {
+    checkOrientation();
+});
+
+// Función para aplicar estilos según la orientación
+function checkOrientation() {
+    if (window.matchMedia("(orientation: portrait)").matches) {
+        // Cambiar a estilos para orientación vertical
+        document.querySelector('.contenedor').style.flexDirection = 'column';
+    } else {
+        // Restablecer a estilos por defecto
+        document.querySelector('.contenedor').style.flexDirection = 'row';
+    }
+}
+
+
 // IMPIDE QUE SE PUEDA IR HACIA ATRAS O ADELANTE USANDO LAS FLECHAS DEL NAVEGADOR
 window.history.pushState(null, null, window.location.href);
 window.onpopstate = function() {
@@ -77,23 +99,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 let fullFlagDictionary = {
-    "🇦🇨": "Channel Islands",
+    // "🇦🇨": "Channel Islands",
     "🇦🇩": "Andorra",
     "🇺🇸": "United States of America",
     "🇦🇪": "United Arab Emirates",
     "🇦🇫": "Afghanistan",
     "🇦🇬": "Antigua and Barbuda",
-    "🇦🇮": "Anguilla",
+    // "🇦🇮": "Anguilla",
     "🇦🇱": "Albania",
     "🇦🇲": "Armenia",
     "🇦🇴": "Angola",
-    "🇦🇶": "Antarctica",
+    // "🇦🇶": "Antarctica",
     "🇦🇷": "Argentina",
     "🇦🇸": "American Samoa",
     "🇦🇹": "Austria",
     "🇦🇺": "Australia",
     "🇦🇼": "Aruba",
-    "🇦🇽": "Åland Islands",
+    // "🇦🇽": "Åland Islands",
     "🇦🇿": "Azerbaijan",
     "🇧🇦": "Bosnia and Herzegovina",
     "🇧🇧": "Barbados",
@@ -112,7 +134,7 @@ let fullFlagDictionary = {
     "🇧🇷": "Brazil",
     "🇧🇸": "Bahamas",
     "🇧🇹": "Bhutan",
-    "🇧🇻": "Bouvet Island",
+    // "🇧🇻": "Bouvet Island",
     "🇧🇼": "Botswana",
     "🇧🇾": "Belarus",
     "🇧🇿": "Belize",
@@ -131,7 +153,7 @@ let fullFlagDictionary = {
     "🇨🇺": "Cuba",
     "🇨🇻": "Cape Verde",
     "🇨🇼": "Curaçao",
-    "🇨🇽": "Christmas Island",
+    // "🇨🇽": "Christmas Island",
     "🇨🇾": "Cyprus",
     "🇨🇿": "Czech Republic",
     "🇩🇪": "Germany",
@@ -143,20 +165,20 @@ let fullFlagDictionary = {
     "🇪🇨": "Ecuador",
     "🇪🇪": "Estonia",
     "🇪🇬": "Egypt",
-    "🇪🇭": "Western Sahara",
+    // "🇪🇭": "Western Sahara",
     "🇪🇷": "Eritrea",
     "🇪🇸": "Spain",
     "🇪🇹": "Ethiopia",
     "🇫🇮": "Finland",
     "🇫🇯": "Fiji",
-    "🇫🇰": "Falkland Islands",
-    "🇫🇴": "Faroe Islands",
+    // "🇫🇰": "Falkland Islands",
+    // "🇫🇴": "Faroe Islands",
     "🇫🇷": "France",
     "🇬🇦": "Gabon",
     "🇬🇧": "United Kingdom",
     "🇬🇩": "Grenada",
     "🇬🇪": "Georgia",
-    "🇬🇫": "French Guiana",
+    // "🇬🇫": "French Guiana",
     "🇬🇬": "Guernsey",
     "🇬🇭": "Ghana",
     "🇬🇮": "Gibraltar",
@@ -167,7 +189,7 @@ let fullFlagDictionary = {
     "🇬🇶": "Equatorial Guinea",
     "🇬🇷": "Greece",
     "🇬🇹": "Guatemala",
-    "🇬🇺": "Guam",
+    // "🇬🇺": "Guam",
     "🇬🇼": "Guinea-Bissau",
     "🇬🇾": "Guyana",
     "🇭🇰": "Hong Kong",
@@ -175,17 +197,17 @@ let fullFlagDictionary = {
     "🇭🇷": "Croatia",
     "🇭🇹": "Haiti",
     "🇭🇺": "Hungary",
-    "🇮🇨": "Canary Islands",
+    // "🇮🇨": "Canary Islands",
     "🇮🇩": "Indonesia",
     "🇮🇪": "Ireland",
     "🇮🇱": "Israel",
-    "🇮🇲": "Isle of Man",
+    // "🇮🇲": "Isle of Man",
     "🇮🇳": "India",
     "🇮🇶": "Iraq",
     "🇮🇷": "Iran",
     "🇮🇸": "Iceland",
     "🇮🇹": "Italy",
-    "🇯🇪": "Jersey",
+    // "🇯🇪": "Jersey",
     "🇯🇲": "Jamaica",
     "🇯🇴": "Jordan",
     "🇯🇵": "Japan",
@@ -198,7 +220,7 @@ let fullFlagDictionary = {
     "🇰🇵": "North Korea",
     "🇰🇷": "South Korea",
     "🇰🇼": "Kuwait",
-    "🇰🇾": "Cayman Islands",
+    // "🇰🇾": "Cayman Islands",
     "🇰🇿": "Kazakhstan",
     "🇱🇦": "Laos",
     "🇱🇧": "Lebanon",
@@ -223,7 +245,7 @@ let fullFlagDictionary = {
     "🇲🇲": "Myanmar",
     "🇲🇳": "Mongolia",
     "🇲🇴": "Macao",
-    "🇲🇵": "Northern Mariana Islands",
+    // "🇲🇵": "Northern Mariana Islands",
     "🇲🇶": "Martinique",
     "🇲🇷": "Mauritania",
     "🇲🇸": "Montserrat",
@@ -248,14 +270,14 @@ let fullFlagDictionary = {
     "🇴🇲": "Oman",
     "🇵🇦": "Panama",
     "🇵🇪": "Peru",
-    "🇵🇫": "French Polynesia",
+    // "🇵🇫": "French Polynesia",
     "🇵🇬": "Papua New Guinea",
     "🇵🇭": "Philippines",
     "🇵🇰": "Pakistan",
     "🇵🇱": "Poland",
-    "🇵🇳": "Pitcairn Islands",
+    // "🇵🇳": "Pitcairn Islands",
     "🇵🇷": "Puerto Rico",
-    "🇵🇸": "Palestinian Territories",
+    // "🇵🇸": "Palestinian Territories",
     "🇵🇹": "Portugal",
     "🇵🇼": "Palau",
     "🇵🇾": "Paraguay",
@@ -272,23 +294,23 @@ let fullFlagDictionary = {
 };
 
 let fullCountriesNames = [
-    "Channel Islands",
+    // "Channel Islands",
     "Andorra",
     "United States of America",
     "United Arab Emirates",
     "Afghanistan",
     "Antigua and Barbuda",
-    "Anguilla",
+    // "Anguilla",
     "Albania",
     "Armenia",
     "Angola",
-    "Antarctica",
+    // "Antarctica",
     "Argentina",
     "American Samoa",
     "Austria",
     "Australia",
     "Aruba",
-    "Åland Islands",
+    // "Åland Islands",
     "Azerbaijan",
     "Bosnia and Herzegovina",
     "Barbados",
@@ -307,7 +329,7 @@ let fullCountriesNames = [
     "Brazil",
     "Bahamas",
     "Bhutan",
-    "Bouvet Island",
+    // "Bouvet Island",
     "Botswana",
     "Belarus",
     "Belize",
@@ -326,7 +348,7 @@ let fullCountriesNames = [
     "Cuba",
     "Cape Verde",
     "Curaçao",
-    "Christmas Island",
+    // "Christmas Island",
     "Cyprus",
     "Czech Republic",
     "Germany",
@@ -338,20 +360,20 @@ let fullCountriesNames = [
     "Ecuador",
     "Estonia",
     "Egypt",
-    "Western Sahara",
+    // "Western Sahara",
     "Eritrea",
     "Spain",
     "Ethiopia",
     "Finland",
     "Fiji",
-    "Falkland Islands",
-    "Faroe Islands",
+    // "Falkland Islands",
+    // "Faroe Islands",
     "France",
     "Gabon",
     "United Kingdom",
     "Grenada",
     "Georgia",
-    "French Guiana",
+    // "French Guiana",
     "Guernsey",
     "Ghana",
     "Gibraltar",
@@ -362,7 +384,7 @@ let fullCountriesNames = [
     "Equatorial Guinea",
     "Greece",
     "Guatemala",
-    "Guam",
+    // "Guam",
     "Guinea-Bissau",
     "Guyana",
     "Hong Kong",
@@ -370,17 +392,17 @@ let fullCountriesNames = [
     "Croatia",
     "Haiti",
     "Hungary",
-    "Canary Islands",
+    // "Canary Islands",
     "Indonesia",
     "Ireland",
     "Israel",
-    "Isle of Man",
+    // "Isle of Man",
     "India",
     "Iraq",
     "Iran",
     "Iceland",
     "Italy",
-    "Jersey",
+    // "Jersey",
     "Jamaica",
     "Jordan",
     "Japan",
@@ -393,7 +415,7 @@ let fullCountriesNames = [
     "North Korea",
     "South Korea",
     "Kuwait",
-    "Cayman Islands",
+    // "Cayman Islands",
     "Kazakhstan",
     "Laos",
     "Lebanon",
@@ -418,7 +440,7 @@ let fullCountriesNames = [
     "Myanmar",
     "Mongolia",
     "Macao",
-    "Northern Mariana Islands",
+    // "Northern Mariana Islands",
     "Martinique",
     "Mauritania",
     "Montserrat",
@@ -443,14 +465,14 @@ let fullCountriesNames = [
     "Oman",
     "Panama",
     "Peru",
-    "French Polynesia",
+    // "French Polynesia",
     "Papua New Guinea",
     "Philippines",
     "Pakistan",
     "Poland",
-    "Pitcairn Islands",
+    // "Pitcairn Islands",
     "Puerto Rico",
-    "Palestinian Territories",
+    // "Palestinian Territories",
     "Portugal",
     "Palau",
     "Paraguay",
@@ -467,11 +489,6 @@ let fullCountriesNames = [
 ];
 
 // let Dictionaty3PaisesPorBandera = {  
-//     "🇦🇨": {
-//         "pais": "Channel Islands",
-//         "similar1": "Isle of Man",
-//         "similar2": "Ireland"
-//     },
 //     "🇦🇩": {
 //         "pais": "Andorra",
 //         "similar1": "Romania",
@@ -497,11 +514,6 @@ let fullCountriesNames = [
 //         "similar1": "Barbados",
 //         "similar2": "Saint Kitts and Nevis"
 //     },
-//     "🇦🇮": {
-//         "pais": "Anguilla",
-//         "similar1": "Saint Kitts and Nevis",
-//         "similar2": "Montserrat"
-//     },
 //     "🇦🇱": {
 //         "pais": "Albania",
 //         "similar1": "Austria",
@@ -516,11 +528,6 @@ let fullCountriesNames = [
 //         "pais": "Angola",
 //         "similar1": "Saint Kitts and Nevis",
 //         "similar2": "Liechtenstein"
-//     },
-//     "🇦🇶": {
-//         "pais": "Antarctica",
-//         "similar1": "Arctic",
-//         "similar2": "Svalbard and Jan Mayen"
 //     },
 //     "🇦🇷": {
 //         "pais": "Argentina",
@@ -546,11 +553,6 @@ let fullCountriesNames = [
 //         "pais": "Aruba",
 //         "similar1": "Australia",
 //         "similar2": "Austria"
-//     },
-//     "🇦🇽": {
-//         "pais": "Åland Islands",
-//         "similar1": "Iceland",
-//         "similar2": "Faroe Islands"
 //     },
 //     "🇦🇿": {
 //         "pais": "Azerbaijan",
@@ -641,11 +643,6 @@ let fullCountriesNames = [
 //         "pais": "Bhutan",
 //         "similar1": "Bangladesh",
 //         "similar2": "Barbados"
-//     },
-//     "🇧🇻": {
-//         "pais": "Bouvet Island",
-//         "similar1": "Botswana",
-//         "similar2": "Bolivia"
 //     },
 //     "🇧🇼": {
 //         "pais": "Botswana",
@@ -747,11 +744,6 @@ let fullCountriesNames = [
 //         "similar1": "Cuba",
 //         "similar2": "Cyprus"
 //     },
-//     "🇨🇽": {
-//         "pais": "Christmas Island",
-//         "similar1": "Cocos (Keeling) Islands",
-//         "similar2": "Cyprus"
-//     },
 //     "🇨🇾": {
 //         "pais": "Cyprus",
 //         "similar1": "Christmas Island",
@@ -812,11 +804,6 @@ let fullCountriesNames = [
 //         "similar1": "Ecuador",
 //         "similar2": "Estonia"
 //     },
-//     "🇪🇭": {
-//         "pais": "Western Sahara",
-//         "similar1": "Eritrea",
-//         "similar2": "Estonia"
-//     },
 //     "🇪🇷": {
 //         "pais": "Eritrea",
 //         "similar1": "Ecuador",
@@ -842,16 +829,6 @@ let fullCountriesNames = [
 //         "similar1": "Finland",
 //         "similar2": "Falkland Islands"
 //     },
-//     "🇫🇰": {
-//         "pais": "Falkland Islands",
-//         "similar1": "Finland",
-//         "similar2": "Fiji"
-//     },
-//     "🇫🇴": {
-//         "pais": "Faroe Islands",
-//         "similar1": "Fiji",
-//         "similar2": "Finland"
-//     },
 //     "🇫🇷": {
 //         "pais": "France",
 //         "similar1": "Finland",
@@ -876,11 +853,6 @@ let fullCountriesNames = [
 //         "pais": "Georgia",
 //         "similar1": "Grenada",
 //         "similar2": "Germany"
-//     },
-//     "🇬🇫": {
-//         "pais": "French Guiana",
-//         "similar1": "Ghana",
-//         "similar2": "Guatemala"
 //     },
 //     "🇬🇬": {
 //         "pais": "Guernsey",
@@ -932,11 +904,6 @@ let fullCountriesNames = [
 //         "similar1": "Gambia",
 //         "similar2": "Grenada"
 //     },
-//     "🇬🇺": {
-//         "pais": "Guam",
-//         "similar1": "Gambia",
-//         "similar2": "Guadeloupe"
-//     },
 //     "🇬🇼": {
 //         "pais": "Guinea-Bissau",
 //         "similar1": "Grenada",
@@ -962,11 +929,6 @@ let fullCountriesNames = [
 //         "similar1": "Honduras",
 //         "similar2": "Hungary"
 //     },
-//     "🇮🇨": {
-//         "pais": "Canary Islands",
-//         "similar1": "Indonesia",
-//         "similar2": "Ireland"
-//     },
 //     "🇮🇩": {
 //         "pais": "Indonesia",
 //         "similar1": "India",
@@ -981,11 +943,6 @@ let fullCountriesNames = [
 //         "pais": "Israel",
 //         "similar1": "Iceland",
 //         "similar2": "Italy"
-//     },
-//     "🇮🇲": {
-//         "pais": "Isle of Man",
-//         "similar1": "Israel",
-//         "similar2": "Iceland"
 //     },
 //     "🇮🇳": {
 //         "pais": "India",
@@ -1022,11 +979,6 @@ let fullCountriesNames = [
 //         "similar1": "Honduras",
 //         "similar2": "Haiti"
 //     },
-//     "🇮🇨": {
-//         "pais": "Canary Islands",
-//         "similar1": "Canada",
-//         "similar2": "Cameroon"
-//     },
 //     "🇮🇩": {
 //         "pais": "Indonesia",
 //         "similar1": "India",
@@ -1040,11 +992,6 @@ let fullCountriesNames = [
 //     "🇮🇱": {
 //         "pais": "Israel",
 //         "similar1": "Italy",
-//         "similar2": "Iceland"
-//     },
-//     "🇮🇲": {
-//         "pais": "Isle of Man",
-//         "similar1": "Israel",
 //         "similar2": "Iceland"
 //     },
 //     "🇮🇳": {
@@ -1061,11 +1008,6 @@ let fullCountriesNames = [
 //         "pais": "Iraq",
 //         "similar1": "Iran",
 //         "similar2": "Iceland"
-//     },
-//     "🇯🇪": {
-//         "pais": "Jersey",
-//         "similar1": "Japan",
-//         "similar2": "Jamaica"
 //     },
 //     "🇯🇲": {
 //         "pais": "Jamaica",
@@ -1222,11 +1164,6 @@ let fullCountriesNames = [
 //         "similar1": "Mozambique",
 //         "similar2": "Monaco"
 //     },
-//     "🇲🇵": {
-//         "pais": "Northern Mariana Islands",
-//         "similar1": "Marshall Islands",
-//         "similar2": "Martinique"
-//     },
 //     "🇲🇶": {
 //         "pais": "Martinique",
 //         "similar1": "Montserrat",
@@ -1347,11 +1284,6 @@ let fullCountriesNames = [
 //         "similar1": "Poland",
 //         "similar2": "Philippines"
 //     },
-//     "🇵🇫": {
-//         "pais": "French Polynesia",
-//         "similar1": "Philippines",
-//         "similar2": "Pakistan"
-//     },
 //     "🇵🇬": {
 //         "pais": "Papua New Guinea",
 //         "similar1": "Philippines",
@@ -1372,20 +1304,10 @@ let fullCountriesNames = [
 //         "similar1": "Saint Kitts and Nevis",
 //         "similar2": "Saint Lucia"
 //     },
-//     "🇵🇳": {
-//         "pais": "Pitcairn Islands",
-//         "similar1": "Philippines",
-//         "similar2": "Pakistan"
-//     },
 //     "🇵🇷": {
 //         "pais": "Puerto Rico",
 //         "similar1": "Portugal",
 //         "similar2": "Palestine"
-//     },
-//     "🇵🇸": {
-//         "pais": "Palestinian Territories",
-//         "similar1": "Philippines",
-//         "similar2": "Pakistan"
 //     },
 //     "🇵🇹": {
 //         "pais": "Portugal",

@@ -86,14 +86,10 @@ h1 {
   flex-wrap: wrap;
 }
 
-@media screen and (max-width: 768px) and (min-aspect-ratio: 1/1) {
+/* Estilos para orientación vertical */
+@media (orientation: portrait) {
   #zzz {
-    flex-direction: column;
-  }
-
-  #zzz > * {
-    flex-basis: auto;
-    margin: 10px;
+      flex-direction: column;
   }
 }
 
@@ -160,7 +156,7 @@ label {
   padding: 2% 1%;
   cursor: pointer;
   transition: 0.2s all linear;
-  letter-spacing: 2px;
+  /* letter-spacing: 2px; */
 }
 
 .buttons:hover {
@@ -243,7 +239,8 @@ section {
   background: rgba(255, 255, 255, 0.2);
   animation: animate 15s linear infinite;
   bottom: -150px;
-  z-index: 1; /* Valor más bajo para los cuadrados */
+  z-index: 0; /* Valor más bajo para los cuadrados */
+  border-radius: 100%;
 }
 
 .circles li:nth-child(1) {
@@ -325,12 +322,10 @@ section {
   0% {
     transform: translateY(0);
     opacity: 1;
-    border-radius: 100%;
   }
 
   100% {
     transform: translateY(-1000px);
     opacity: 0;
-    border-radius: 100%;
   }
 }
