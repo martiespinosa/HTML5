@@ -1,5 +1,5 @@
 // Verificar si el dispositivo es un PC
-if (window.innerWidth < 768 || window.innerHeight < 768) {
+if (window.innerWidth < 500 || window.innerHeight < 500) {
     // Redirigir a otra página
     window.location.href = "error.html";
 }
