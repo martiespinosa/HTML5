@@ -87,7 +87,7 @@ h1 {
 }
 
 /* Estilos para orientación vertical */
-@media (orientation: portrait) {
+@media (max-width: 767px) {
   #zzz {
       flex-direction: column;
   }
