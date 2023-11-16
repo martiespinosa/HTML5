@@ -1,7 +1,7 @@
 // Verificar si el dispositivo es un PC
 if (window.innerWidth < 768 || window.innerHeight < 768) {
     // Redirigir a otra página
-    window.location.href = "pagina_no_disponible.html";
+    window.location.href = "error.html";
 }
 
 
