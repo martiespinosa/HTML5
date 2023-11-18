@@ -12,6 +12,15 @@ window.onpopstate = function() {
 };
 
 
+// Función para des-seleccionar los radio buttons al cargar o recargar la página
+function desSeleccionarRadioButtons() {
+    var radioButtons = document.getElementsByClassName("radio");
+    for (var i = 0; i < 3; i++) {
+        radioButtons[i].checked = false;
+    }
+}
+
+
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('sec').style.opacity = 1; // Cuando se carga completamente, establece la opacidad a 1
 });
