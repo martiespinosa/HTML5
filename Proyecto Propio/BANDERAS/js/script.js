@@ -1509,15 +1509,15 @@ let countries10 = Object.values(dictionary10);
 document.addEventListener('keydown', function (event) {
     if (event.key === ' ') { // ' ' representa la tecla de espacio
         if (window.location.href.includes('index.html')) {
-            window.location.href = 'html/flag.html'; 
+            window.location.href = 'html/flags.html'; 
         } else if (window.location.href.includes('score.html')) {
-            window.location.href = 'flag.html'; 
+            window.location.href = 'flagg.html'; 
         }
     }
 });
 
-if (window.location.href.includes('flag.html')) {
-    // PONE BANDERA Y PAIS EN UNA POSICION RANDOM DE 1 A 3 CUANDO SE CARGA LA PAGINA FLAG.HTML
+if (window.location.href.includes('flags.html')) {
+    // PONE BANDERA Y PAIS EN UNA POSICION RANDOM DE 1 A 3 CUANDO SE CARGA LA PAGINA FLAGS.HTML
     var opcionCorrectaNum = Math.floor(Math.random() * 3) + 1;
     var opcionCorrecta = document.getElementById('opcion' + opcionCorrectaNum);
     var flag = document.getElementsByClassName('flag')[0];
@@ -1558,7 +1558,7 @@ const radioButtons = document.querySelectorAll('input[name="pais"]');
 const solveButton = document.getElementById('solve');
 const nextButton = document.getElementById('next');
 
-if (window.location.href.includes('flag.html')) {
+if (window.location.href.includes('flags.html')) {
     solveButton.addEventListener('click', function() {
         let isChecked = false;
         let selectedRadioButton = null;
