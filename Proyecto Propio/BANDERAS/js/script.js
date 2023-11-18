@@ -58,6 +58,63 @@ function getRandomCountry() {
 
 
 
+// APLICA LA REDUCCION DE TAMAÑO DE LOS PAISES QUE SU NOMBRE ES LARGO DE MANERA PROPORCIONAL
+document.addEventListener("DOMContentLoaded", function () {
+    // Obtener elementos con la clase 'pais'
+    var paises = document.querySelectorAll('.pais');
+
+    // Iterar sobre cada elemento y ajustar el tamaño del texto
+    paises.forEach(function (pais) {
+        ajustarTamanioTexto(pais);
+    });
+
+    // Crear un MutationObserver para observar cambios en el contenido de los elementos
+    var observer = new MutationObserver(function (mutations) {
+        mutations.forEach(function (mutation) {
+            if (mutation.type === 'characterData' || mutation.type === 'childList') {
+                // Ajustar el tamaño del texto cuando el contenido cambie
+                ajustarTamanioTexto(mutation.target);
+            }
+        });
+    });
+
+    // Configurar el MutationObserver para observar cambios en el contenido y la estructura
+    var observerConfig = { characterData: true, subtree: true, childList: true };
+
+    // Agregar el MutationObserver a cada elemento con la clase 'pais'
+    paises.forEach(function (pais) {
+        observer.observe(pais, observerConfig);
+    });
+});
+
+// Función para ajustar el tamaño del texto
+function ajustarTamanioTexto(elemento) {
+    // Definir un tamaño base y un factor de reducción
+    var tamanoBase = 38; // Puedes ajustar esto según tus necesidades
+    var factorReduccion = 1.1; // Puedes ajustar esto según tus necesidades
+
+    // Obtener la longitud del texto
+    var longitudTexto = elemento.textContent.length;
+
+    // Calcular el tamaño de la fuente en función de la longitud del texto
+    if (longitudTexto > 15) {
+        letrasDeMas = longitudTexto - 15;
+        var tamanoFuente = tamanoBase - factorReduccion * letrasDeMas;
+    } else {
+        tamanoFuente = tamanoBase
+    }
+
+    // Aplicar el tamaño de la fuente al elemento
+    elemento.style.fontSize = tamanoFuente + 'px';
+}
+
+
+
+
+
+
+
+
 
 function score(contadorAciertos) {
     let scoreOutOfTen = contadorAciertos + ' / 10';
