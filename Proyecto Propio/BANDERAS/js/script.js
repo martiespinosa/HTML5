@@ -1530,7 +1530,7 @@ if (window.location.href.includes('flags.html')) {
     do {
         var random1 = getRandomCountry();
         var random2 = getRandomCountry();
-    } while (random1 == countries10[0] || random2 == countries10[0]);
+    } while (random1 == countries10[0] || random2 == countries10[0] || random2 == random1);
 
     if (opcionCorrectaNum === 1) {
         document.getElementById('opcion2').innerHTML = random1;
@@ -1622,7 +1622,7 @@ if (window.location.href.includes('flags.html')) {
             do {
                 random1 = getRandomCountry();
                 random2 = getRandomCountry();
-            } while (random1 == countries10[flag_no] || random2 == countries10[flag_no]);
+            } while (random1 == countries10[flag_no] || random2 == countries10[flag_no] || random2 == random1);
 
             if (opcionCorrectaNum === 1) {
                 document.getElementById('opcion2').innerHTML = random1;
