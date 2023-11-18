@@ -1506,15 +1506,20 @@ if (window.location.href.includes('flag.html')) {
         console.log(countries10);
     });
     // PONE LOS PAISES INCORRECTOS EN LOS 2 LABELS RESTANTES
+    do {
+        var random1 = getRandomCountry();
+        var random2 = getRandomCountry();
+    } while (random1 == countries10[0] || random2 == countries10[0]);
+
     if (opcionCorrectaNum === 1) {
-        document.getElementById('opcion2').innerHTML = getRandomCountry();
-        document.getElementById('opcion3').innerHTML = getRandomCountry();
+        document.getElementById('opcion2').innerHTML = random1;
+        document.getElementById('opcion3').innerHTML = random2;
     } else if (opcionCorrectaNum === 2) {
-        document.getElementById('opcion1').innerHTML = getRandomCountry();
-        document.getElementById('opcion3').innerHTML = getRandomCountry();
+        document.getElementById('opcion1').innerHTML = random1;
+        document.getElementById('opcion3').innerHTML = random2;
     } else {
-        document.getElementById('opcion1').innerHTML = getRandomCountry();
-        document.getElementById('opcion2').innerHTML = getRandomCountry();
+        document.getElementById('opcion1').innerHTML = random1;
+        document.getElementById('opcion2').innerHTML = random2;
     }
 
     // ASIGNA EL RADIO BUTTON CORRECTO
@@ -1554,7 +1559,6 @@ if (window.location.href.includes('flag.html')) {
                 selectedRadioButton.style.backgroundColor = 'rgba(255, 0, 0, .8';
                 document.getElementById("radio" + opcionCorrectaNum).style.backgroundColor = '#4ec85a';
                 document.getElementsByClassName("progress_number")[flag_no].style.backgroundColor = 'rgba(255, 0, 0, .8';
-                // contadorFallos++;    
             } else {
                 document.getElementById("radio" + opcionCorrectaNum).style.backgroundColor = '#4ec85a';
                 document.getElementsByClassName("progress_number")[flag_no].style.backgroundColor = '#4ec85a'
@@ -1592,16 +1596,22 @@ if (window.location.href.includes('flag.html')) {
             opcionCorrecta = document.getElementById('opcion' + opcionCorrectaNum);
             opcionCorrecta.innerHTML = countries10[flag_no];
             console.log(countries10[flag_no]);
+
             // PONE LOS PAISES INCORRECTOS EN LOS 2 LABELS RESTANTES
+            do {
+                random1 = getRandomCountry();
+                random2 = getRandomCountry();
+            } while (random1 == countries10[flag_no] || random2 == countries10[flag_no]);
+
             if (opcionCorrectaNum === 1) {
-                document.getElementById('opcion2').innerHTML = getRandomCountry();
-                document.getElementById('opcion3').innerHTML = getRandomCountry();
+                document.getElementById('opcion2').innerHTML = random1;
+                document.getElementById('opcion3').innerHTML = random2;
             } else if (opcionCorrectaNum === 2) {
-                document.getElementById('opcion1').innerHTML = getRandomCountry();
-                document.getElementById('opcion3').innerHTML = getRandomCountry();
+                document.getElementById('opcion1').innerHTML = random1;
+                document.getElementById('opcion3').innerHTML = random2;
             } else if (opcionCorrectaNum === 3) {
-                document.getElementById('opcion1').innerHTML = getRandomCountry();
-                document.getElementById('opcion2').innerHTML = getRandomCountry();
+                document.getElementById('opcion1').innerHTML = random1;
+                document.getElementById('opcion2').innerHTML = random2;
             }
 
             // REASIGNA EL RADIO BUTTON CORRECTO
