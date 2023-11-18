@@ -71,7 +71,7 @@ h1 {
   top: 25px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 4vw;
+  font-size: clamp(4vw, 33px, 45px);
   color: #4ec85a;
   color: rgba(255, 255, 255, 0.8);
   text-align: center;
@@ -211,17 +211,23 @@ section {
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 500px) {
   .options {
-    width: 90%;
-    left: 5%;
-    top: 60%;
+    width: 70%;
+    left: 15%;
+    top: 70%;
+  }
+
+  .pais {
+    font-size: 6vw !important;
   }
 
   .flag {
-    font-size: 60vw;
-    left: 5vw;
-    top: 30%;
+    width: 100%;
+    font-size: 55vw;
+    left: 0;
+    top: 38%;
+    text-align: center;
   }
 }
 
