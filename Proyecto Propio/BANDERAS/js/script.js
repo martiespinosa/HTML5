@@ -111,6 +111,27 @@ function ajustarTamanioTexto(elemento) {
 
 
 
+// AGREGA FUNCIONALIDAD A LA TECLA ENTER
+document.addEventListener("DOMContentLoaded", function () {
+    // Obtén todos los elementos de tipo radio
+    var radioButtons = document.querySelectorAll('input[type="radio"]');
+
+    // Agrega un evento de escucha para la tecla "Enter" en todo el documento
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            // Encuentra ambos botones
+            var button1 = document.getElementById('solve');
+            var button2 = document.getElementById('next');
+
+            // Hace clic en el primer botón no deshabilitado
+            if (button1 && !button1.disabled) {
+                button1.click();
+            } else if (button2 && !button2.disabled) {
+                button2.click();
+            }
+        }
+    });
+});
 
 
 
