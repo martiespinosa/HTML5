@@ -1511,7 +1511,7 @@ document.addEventListener('keydown', function (event) {
         if (window.location.href.includes('index.html')) {
             window.location.href = 'html/flags.html'; 
         } else if (window.location.href.includes('score.html')) {
-            window.location.href = 'flagg.html'; 
+            window.location.href = 'flags.html'; 
         }
     }
 });
