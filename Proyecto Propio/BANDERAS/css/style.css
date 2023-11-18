@@ -122,7 +122,7 @@ input[type="radio"] {
 }
 
 input[type="radio"]:checked {
-  /* margin: -5px; */
+  /* margin-left: 15px; */
   background-color: rgba(255, 166, 0, .9);
 }
 
@@ -179,7 +179,6 @@ label {
   border: .3vw solid white;
   border-radius: 100%;
   font-size: 2vw;
-  cursor: pointer;
   opacity: .6;
 }
 
@@ -193,7 +192,6 @@ label {
 
 
 
-
 section {
   position: relative;
   background-color: rgba(255, 255, 255, 0.4);
@@ -202,11 +200,31 @@ section {
   border-radius: 25px;
   margin: auto;
   box-shadow: rgba(10, 127, 37, 0.717) 10px 10px 50px;
-  position: relative; /* Establece la posición relativa para los elementos absolutos */
   /* transform: translateX(-100%); */
   /* animation: enterAnimation 1s forwards; */
   z-index: 2; /* Valor más alto para el section */
 }
+
+
+
+
+
+@media (max-width: 768px) {
+  .options {
+    width: 90%;
+    left: 5%;
+    top: 60%;
+  }
+
+  .flag {
+    font-size: 60vw;
+    left: 5vw;
+    top: 30%;
+  }
+}
+
+
+
 
 .context {
   width: 100%;
