@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // Función para ajustar el tamaño del texto
 function ajustarTamanioTexto(elemento) {
     // Definir un tamaño base y un factor de reducción
-    var tamanoBase = 3; // Puedes ajustar esto según tus necesidades
+    var tamanoBase = 38; // Puedes ajustar esto según tus necesidades
     var factorReduccion = 1.1; // Puedes ajustar esto según tus necesidades
 
     // Obtener la longitud del texto
@@ -105,7 +105,7 @@ function ajustarTamanioTexto(elemento) {
     }
 
     // Aplicar el tamaño de la fuente al elemento
-    elemento.style.fontSize = tamanoFuente + 'vw';
+    elemento.style.fontSize = tamanoFuente + 'px';
 }
 
 
