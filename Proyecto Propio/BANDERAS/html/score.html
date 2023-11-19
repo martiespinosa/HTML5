@@ -35,9 +35,11 @@
         </ul>
       </div>
 
-    
-    
+    // Importa la libreria del confetti
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+    // Lo enlaca con mi archivo js
     <script src="../js/script.js"></script>
+    // Otra etiqueta script para este html en concreto
     <script>
         // Recupera el valor de contadorAciertos del localStorage
         var contadorAciertos = localStorage.getItem('contadorAciertos');
@@ -45,7 +47,6 @@
         contadorAciertos = parseInt(contadorAciertos);
         // Llama a la función score con contadorAciertos como parámetro
         score(contadorAciertos);
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+    </script>    
 </body>
 </html>
