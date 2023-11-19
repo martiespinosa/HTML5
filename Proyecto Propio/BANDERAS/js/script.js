@@ -444,7 +444,6 @@ if (window.location.href.includes('flags.html')) {
                 contadorAciertos++;
                 // Después de incrementar contadorAciertos en script.js
                 localStorage.setItem('contadorAciertos', contadorAciertos);
-                console.log('contadorAciertos guardado en el almacenamiento local:', contadorAciertos);
             }
 
             [...radioButtons].forEach(function(radioButton) {
@@ -477,7 +476,6 @@ if (window.location.href.includes('flags.html')) {
             opcionCorrectaNum = Math.floor(Math.random() * 3) + 1;
             opcionCorrecta = document.getElementById('opcion' + opcionCorrectaNum);
             opcionCorrecta.innerHTML = countries10[flag_no];
-            console.log(countries10[flag_no]);
 
             // PONE LOS PAISES INCORRECTOS EN LOS 2 LABELS RESTANTES
             do {
