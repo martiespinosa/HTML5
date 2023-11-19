@@ -137,6 +137,7 @@ label {
   font-weight: 500;
   cursor: pointer;
   vertical-align: middle;
+  transition: 0.2s all linear;
 }
 
 .buttons {
@@ -185,6 +186,7 @@ label {
   border-radius: 100%;
   font-size: 2vw;
   opacity: .6;
+  transition: 0.2s all linear;
 }
 
 #score {

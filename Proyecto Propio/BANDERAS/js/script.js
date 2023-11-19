@@ -140,6 +140,11 @@ document.addEventListener("DOMContentLoaded", function () {
 function score(contadorAciertos) {
     let scoreOutOfTen = contadorAciertos + ' / 10';
     document.getElementById('score').innerHTML = scoreOutOfTen;
+
+    if (contadorAciertos === 10) {
+        const confetti = new JSConfetti();
+        confetti.addConfetti();
+    }
 }
 
 
@@ -1559,6 +1564,10 @@ const solveButton = document.getElementById('solve');
 const nextButton = document.getElementById('next');
 
 if (window.location.href.includes('flags.html')) {
+    // PONE EN NARANJA EL PROGRES NUMBER DE LA BANDERA NUMERO 1
+    document.getElementsByClassName("progress_number")[flag_no].style.border = '.3vw solid orange';
+    document.getElementsByClassName("progress_number")[flag_no].style.color = 'orange';
+
     solveButton.addEventListener('click', function() {
         let isChecked = false;
         let selectedRadioButton = null;
@@ -1575,14 +1584,19 @@ if (window.location.href.includes('flags.html')) {
             solveButton.style.display = 'none';
             nextButton.disabled = false;
             nextButton.style.display = 'block';
-                    
+                   
+            // COLOREA EL PROGRESS NUMBER DE LA BARRA DE ABAJO SEGUN SI ACIERTA O FALLA
             if (selectedRadioButton.id !== "radio" + opcionCorrectaNum) {
                 selectedRadioButton.style.backgroundColor = 'rgba(255, 0, 0, .8';
                 document.getElementById("radio" + opcionCorrectaNum).style.backgroundColor = '#4ec85a';
                 document.getElementsByClassName("progress_number")[flag_no].style.backgroundColor = 'rgba(255, 0, 0, .8';
+                document.getElementsByClassName("progress_number")[flag_no].style.border = '.3vw solid white';
+                document.getElementsByClassName("progress_number")[flag_no].style.color = 'white';                
             } else {
                 document.getElementById("radio" + opcionCorrectaNum).style.backgroundColor = '#4ec85a';
                 document.getElementsByClassName("progress_number")[flag_no].style.backgroundColor = '#4ec85a'
+                document.getElementsByClassName("progress_number")[flag_no].style.border = '.3vw solid white';
+                document.getElementsByClassName("progress_number")[flag_no].style.color = 'white';               
                 contadorAciertos++;
                 // Después de incrementar contadorAciertos en script.js
                 localStorage.setItem('contadorAciertos', contadorAciertos);
@@ -1604,6 +1618,9 @@ if (window.location.href.includes('flags.html')) {
         if (flag_no == 9) {
             window.location.href = "score.html";
         } else {
+            // PONE EN NARANJA EL PROGRES NUMBER DE LA BANDERA ACTUAL
+            document.getElementsByClassName("progress_number")[flag_no + 1].style.border = '.3vw solid orange';
+            document.getElementsByClassName("progress_number")[flag_no + 1].style.color = 'orange';
 
             flag_no++;
 
