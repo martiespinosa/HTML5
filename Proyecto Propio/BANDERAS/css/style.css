@@ -123,8 +123,11 @@ input[type="radio"] {
 }
 
 input[type="radio"]:checked {
-  margin-left: 15px;
+  /* margin-left: 15px; */
   background-color: rgba(255, 166, 0, .9);
+}
+input[type="radio"]:checked + label {
+  text-shadow: 1px 1px 10px #ffffff;
 }
 
 label {
@@ -198,7 +201,7 @@ section {
   position: relative;
   background-color: rgba(255, 255, 255, 0.4);
   width: 80vw;
-  height: 85vh;
+  height: 85svh;
   border-radius: 25px;
   margin: auto;
   box-shadow: rgba(10, 127, 37, 0.717) 10px 10px 50px;
