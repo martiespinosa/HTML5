@@ -1565,8 +1565,9 @@ const nextButton = document.getElementById('next');
 
 if (window.location.href.includes('flags.html')) {
     // PONE EN NARANJA EL PROGRES NUMBER DE LA BANDERA NUMERO 1
-    document.getElementsByClassName("progress_number")[flag_no].style.border = '.3vw solid orange';
-    document.getElementsByClassName("progress_number")[flag_no].style.color = 'orange';
+    document.getElementsByClassName("progress_number")[flag_no].style.border = '.3vw solid rgba(255, 165, 0, 0.6)';
+    document.getElementsByClassName("progress_number")[flag_no].style.color = 'rgba(255, 165, 0, 0.6)';
+
 
     solveButton.addEventListener('click', function() {
         let isChecked = false;
@@ -1619,8 +1620,8 @@ if (window.location.href.includes('flags.html')) {
             window.location.href = "score.html";
         } else {
             // PONE EN NARANJA EL PROGRES NUMBER DE LA BANDERA ACTUAL
-            document.getElementsByClassName("progress_number")[flag_no + 1].style.border = '.3vw solid orange';
-            document.getElementsByClassName("progress_number")[flag_no + 1].style.color = 'orange';
+            document.getElementsByClassName("progress_number")[flag_no + 1].style.border = '.3vw solid rgba(255, 165, 0, 0.6)';
+            document.getElementsByClassName("progress_number")[flag_no + 1].style.color = 'rgba(255, 165, 0, 0.6)';
 
             flag_no++;
 
