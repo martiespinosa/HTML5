@@ -149,7 +149,7 @@ function score(contadorAciertos) {
 
 
 
-
+// LAS 193 BANDERAS ASOCIADAS AL NOMBRE DE SU PAIS
 let fullFlagDictionary = {
     '🇦🇫': 'Afghanistan',
     '🇦🇱': 'Albania',
