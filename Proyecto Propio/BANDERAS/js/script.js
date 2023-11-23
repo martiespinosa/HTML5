@@ -185,7 +185,7 @@ let fullFlagDictionary = {
     '🇨🇲': 'Cameroon',
     '🇨🇦': 'Canada',
     '🇨🇫': 'Central African Republic',
-    '🇹🇩': 'Chad', // NEW ONE
+    '🇹🇩': 'Chad',
     '🇨🇱': 'Chile',
     '🇨🇳': 'China',
     '🇨🇴': 'Colombia',
@@ -203,11 +203,11 @@ let fullFlagDictionary = {
     '🇩🇴': 'Dominican Republic',
     '🇪🇨': 'Ecuador',
     '🇪🇬': 'Egypt',
-    '🇸🇻': 'El Salvador', // NEW ONE
+    '🇸🇻': 'El Salvador',
     '🇬🇶': 'Equatorial Guinea',
     '🇪🇷': 'Eritrea',
     '🇪🇪': 'Estonia',
-    '🇸🇿': 'Eswatini', // NEW ONE
+    '🇸🇿': 'Eswatini',
     '🇪🇹': 'Ethiopia',
     '🇫🇯': 'Fiji',
     '🇫🇮': 'Finland',
@@ -261,7 +261,7 @@ let fullFlagDictionary = {
     '🇲🇷': 'Mauritania',
     '🇲🇺': 'Mauritius',
     '🇲🇽': 'Mexico',
-    '🇫🇲': 'Micronesia', // NEW ONE
+    '🇫🇲': 'Micronesia',
     '🇲🇩': 'Moldova',
     '🇲🇨': 'Monaco',
     '🇲🇳': 'Mongolia',
@@ -270,7 +270,7 @@ let fullFlagDictionary = {
     '🇲🇿': 'Mozambique',
     '🇲🇲': 'Myanmar',
     '🇳🇦': 'Namibia',
-    '🇳🇷': 'Nauru', // NEW ONE
+    '🇳🇷': 'Nauru',
     '🇳🇵': 'Nepal',
     '🇳🇱': 'Netherlands',
     '🇳🇿': 'New Zealand',
@@ -296,54 +296,54 @@ let fullFlagDictionary = {
     '🇷🇼': 'Rwanda',
     '🇰🇳': 'Saint Kitts and Nevis',
     '🇱🇨': 'Saint Lucia',
-    '🇻🇨': 'Saint Vincent and the Grenadines', // NEW ONE
-    '🇼🇸': 'Samoa', // NEW ONE
-    '🇸🇲': 'San Marino', // NEW ONE
-    '🇸🇹': 'Sao Tome and Principe', // NEW ONE
+    '🇻🇨': 'Saint Vincent and the Grenadines',
+    '🇼🇸': 'Samoa',
+    '🇸🇲': 'San Marino',
+    '🇸🇹': 'Sao Tome and Principe',
     '🇸🇦': 'Saudi Arabia',
-    '🇸🇳': 'Senegal', // NEW ONE
+    '🇸🇳': 'Senegal',
     '🇷🇸': 'Serbia',
     '🇸🇨': 'Seychelles',
-    '🇸🇱': 'Sierra Leone', // NEW ONE
-    '🇸🇬': 'Singapore', // NEW ONE
-    '🇸🇰': 'Slovakia', // NEW ONE
-    '🇸🇮': 'Slovenia', // NEW ONE
+    '🇸🇱': 'Sierra Leone',
+    '🇸🇬': 'Singapore',
+    '🇸🇰': 'Slovakia',
+    '🇸🇮': 'Slovenia',
     '🇸🇧': 'Solomon Islands',
-    '🇸🇴': 'Somalia', // NEW ONE
-    '🇿🇦': 'South Africa', // NEW ONE
+    '🇸🇴': 'Somalia',
+    '🇿🇦': 'South Africa',
     '🇰🇷': 'South Korea',
-    '🇸🇸': 'South Sudan', // NEW ONE
+    '🇸🇸': 'South Sudan',
     '🇪🇸': 'Spain',
     '🇱🇰': 'Sri Lanka',
     '🇸🇩': 'Sudan',
-    '🇸🇷': 'Suriname', // NEW ONE
-    '🇸🇪': 'Sweden', // NEW ONE
+    '🇸🇷': 'Suriname',
+    '🇸🇪': 'Sweden',
     '🇨🇭': 'Switzerland',
-    '🇸🇾': 'Syria', // NEW ONE
-    '🇹🇯': 'Tajikistan', // NEW ONE
-    '🇹🇿': 'Tanzania', // NEW ONE
-    '🇹🇭': 'Thailand', // NEW ONE
-    '🇹🇱': 'Timor-Leste', // NEW ONE
-    '🇹🇬': 'Togo', // NEW ONE
-    '🇹🇴': 'Tonga', // NEW ONE
-    '🇹🇹': 'Trinidad and Tobago', // NEW ONE
-    '🇹🇳': 'Tunisia', // NEW ONE
-    '🇹🇷': 'Turkey', // NEW ONE
-    '🇹🇲': 'Turkmenistan', // NEW ONE
-    '🇹🇻': 'Tuvalu', // NEW ONE
-    '🇺🇬': 'Uganda', // NEW ONE
-    '🇺🇦': 'Ukraine', // NEW ONE
+    '🇸🇾': 'Syria',
+    '🇹🇯': 'Tajikistan',
+    '🇹🇿': 'Tanzania',
+    '🇹🇭': 'Thailand',
+    '🇹🇱': 'Timor-Leste',
+    '🇹🇬': 'Togo',
+    '🇹🇴': 'Tonga',
+    '🇹🇹': 'Trinidad and Tobago',
+    '🇹🇳': 'Tunisia',
+    '🇹🇷': 'Turkey',
+    '🇹🇲': 'Turkmenistan',
+    '🇹🇻': 'Tuvalu',
+    '🇺🇬': 'Uganda',
+    '🇺🇦': 'Ukraine',
     '🇦🇪': 'United Arab Emirates',
     '🇬🇧': 'United Kingdom',
     '🇺🇸': 'United States of America',
-    '🇺🇾': 'Uruguay', // NEW ONE
-    '🇺🇿': 'Uzbekistan', // NEW ONE
-    '🇻🇺': 'Vanuatu', // NEW ONE
-    '🇻🇪': 'Venezuela', // NEW ONE
-    '🇻🇳': 'Vietnam', // NEW ONE
-    '🇾🇪': 'Yemen', // NEW ONE
-    '🇿🇲': 'Zambia', // NEW ONE
-    '🇿🇼': 'Zimbabwe', // NEW ONE  
+    '🇺🇾': 'Uruguay',
+    '🇺🇿': 'Uzbekistan',
+    '🇻🇺': 'Vanuatu',
+    '🇻🇪': 'Venezuela',
+    '🇻🇳': 'Vietnam',
+    '🇾🇪': 'Yemen',
+    '🇿🇲': 'Zambia',
+    '🇿🇼': 'Zimbabwe',  
 };
 
 
