@@ -86,13 +86,8 @@ h1 {
   flex-wrap: wrap;
 }
 
-img {
-  opacity: .85;
-}
-
 .flag {
   position: absolute;
-  font-size: 33vw;
   left: 5vw;
   top: 50%;
   transform: translateX(-50%);
@@ -232,11 +227,20 @@ section {
 
   .flag {
     width: 100%;
-    font-size: 55vw;
+    height: 50%;
     left: 0;
     top: 38%;
     text-align: center;
   }
+
+  .buttons {
+    margin-top: 5%;
+  }
+
+  .options {
+    margin-top: 3%;
+  }
+
 }
 
 
