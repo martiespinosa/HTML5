@@ -86,6 +86,9 @@ h1 {
   flex-wrap: wrap;
 }
 
+img {
+  opacity: .85;
+}
 
 .flag {
   position: absolute;
