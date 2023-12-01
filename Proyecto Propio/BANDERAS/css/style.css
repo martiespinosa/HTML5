@@ -71,7 +71,7 @@ h1 {
   top: 25px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: clamp(4vw, 33px, 45px);
+  font-size: 4vw;
   color: #4ec85a;
   color: rgba(255, 255, 255, 0.8);
   text-align: center;
@@ -93,6 +93,11 @@ h1 {
   transform: translateX(-50%);
   transform: translateY(-50%);
   opacity: .85;
+}
+
+img {
+  max-width: 42%;
+  height: auto;
 }
 
 .options {
@@ -215,30 +220,39 @@ section {
 
 
 @media (max-width: 500px) {
+  h1 {
+    font-size: 8vw;
+  }
+  
   .options {
     width: 70%;
     left: 15%;
     top: 70%;
   }
 
-  .pais {
-    font-size: 6vw !important;
-  }
+  /* .pais {
+    font-size: 1.5em;
+  } */
 
   .flag {
-    width: 100%;
-    height: 50%;
-    left: 0;
-    top: 38%;
-    text-align: center;
+    left: 10%;
+    top: 35%;
+  }
+
+  img {
+    max-width: 80%;
+    height: auto;
   }
 
   .buttons {
-    margin-top: 5%;
+    margin-top: 6%;
   }
 
-  .options {
-    margin-top: 3%;
+  #opcion1, #opcion2 {
+    padding-bottom: 8%;
+  }
+  #radio1, #radio2 {
+    margin-bottom: 8%;
   }
 
 }

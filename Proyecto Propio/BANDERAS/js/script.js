@@ -87,26 +87,55 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+
+
+
+function comprobarAnchoApp() {
+    return document.documentElement.clientWidth;
+}
+
 // Función para ajustar el tamaño del texto
-function ajustarTamanioTexto(elemento) {
+function ajustarTamanioTexto() {
     // Definir un tamaño base y un factor de reducción
-    var tamanoBase = 38; // Puedes ajustar esto según tus necesidades
-    var factorReduccion = 1.1; // Puedes ajustar esto según tus necesidades
+    var tamanoBase;
+    var factorReduccion;
 
-    // Obtener la longitud del texto
-    var longitudTexto = elemento.textContent.length;
-
-    // Calcular el tamaño de la fuente en función de la longitud del texto
-    if (longitudTexto > 15) {
-        letrasDeMas = longitudTexto - 15;
-        var tamanoFuente = tamanoBase - factorReduccion * letrasDeMas;
+    var ancho = comprobarAnchoApp();
+    
+    if (ancho > 500) {
+        tamanoBase = 3; // Puedes ajustar esto según tus necesidades
+        factorReduccion = 0.1; // Puedes ajustar esto según tus necesidades
     } else {
-        tamanoFuente = tamanoBase
+        tamanoBase = 6; // Puedes ajustar esto según tus necesidades
+        factorReduccion = 0.3; // Puedes ajustar esto según tus necesidades
     }
 
-    // Aplicar el tamaño de la fuente al elemento
-    elemento.style.fontSize = tamanoFuente + 'px';
+    // Obtener la longitud del texto
+    var elementosPais = document.getElementsByClassName("pais");
+
+    // Iterar sobre los elementos con la clase "pais"
+    for (var i = 0; i < elementosPais.length; i++) {
+        var longitudTexto = elementosPais[i].textContent.length;
+
+        // Calcular el tamaño de la fuente en función de la longitud del texto
+        if (longitudTexto > 15) {
+            letrasDeMas = longitudTexto - 15;
+            var tamanoFuente = tamanoBase - factorReduccion * letrasDeMas;
+        } else {
+            tamanoFuente = tamanoBase;
+        }
+
+        // Aplicar el tamaño de la fuente al elemento
+        elementosPais[i].style.fontSize = tamanoFuente + 'vw';
+    }
 }
+
+// Llamar a ajustarTamanioTexto al cargar la página
+window.addEventListener('load', ajustarTamanioTexto);
+
+// Llamar a ajustarTamanioTexto cada vez que la ventana se redimensiona
+window.addEventListener('resize', ajustarTamanioTexto);
+
 
 
 
