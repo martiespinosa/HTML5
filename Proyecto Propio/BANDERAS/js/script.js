@@ -102,7 +102,7 @@ function ajustarTamanioTexto() {
 
     var ancho = comprobarAnchoApp();
     
-    if (ancho > 500) {
+    if (ancho > 600) {
         tamanoBase = 3; // Puedes ajustar esto según tus necesidades
         factorReduccion = 0.1; // Puedes ajustar esto según tus necesidades
     } else {
